@@ -5,7 +5,7 @@ Feature: Login Functionality
 
   Scenario: Successful login with valid credentials
     Given I am on the login page
-    When I enter valid email "aleksandr.titovskoy@greenice.net"
+    When I enter valid email "aleksandr.titovskoy+3@greenice.net"
     And I enter valid password "q1w2e3r4"
     And I click on the login button
     Then I should be redirected to the homepage

@@ -5,12 +5,9 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.testng.Assert;
 import pages.HomePage;
 import pages.LoginPage;
-import com.codeborne.selenide.Condition;
 
 import static com.codeborne.selenide.Selenide.webdriver;
 import static org.testng.Assert.assertTrue;
@@ -54,10 +51,11 @@ public class LoginSteps {
     }
 
     @Then("I should be redirected to the homepage")
-    public void iShouldBeRedirectedToTheHomepage() {
+    public void iShouldBeRedirectedToTheHomepage() throws InterruptedException {
         // Using Selenide's webdriver().driver().url() to get current URL
+        Thread.sleep(7000);
         String currentUrl = webdriver().driver().url();
-        Assert.assertEquals(currentUrl, "http://34.233.163.207/",
+        Assert.assertEquals(currentUrl, "http://34.233.163.207",
                 "Not redirected to the homepage after login");
     }
 
