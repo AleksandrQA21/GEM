@@ -9,8 +9,8 @@
     <version>1.0-SNAPSHOT</version>
 
     <properties>
-        <maven.compiler.source>18</maven.compiler.source>
-        <maven.compiler.target>18</maven.compiler.target>
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
     <dependencies>
@@ -56,6 +56,12 @@
             <artifactId>allure-selenide</artifactId>
             <version>2.29.1</version>
         </dependency>
+        <!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-plugin -->
+        <dependency>
+            <groupId>io.cucumber</groupId>
+            <artifactId>cucumber-plugin</artifactId>
+            <version>7.22.0</version>
+        </dependency>
     </dependencies>
 
     <build>
@@ -70,6 +76,23 @@
                     <release>17</release>
                 </configuration>
             </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>3.1.2</version>
+                <configuration>
+                    <includes>
+                        <include>**/*Test.java</include>
+                        <include>**/*Tests.java</include>
+                        <include>**/RunCucumber*.java</include>
+                    </includes>
+                </configuration>
+            </plugin>
+<!--            <plugin>-->
+<!--                <groupId>io.cucumber</groupId>-->
+<!--                <artifactId>cucumber-maven-plugin</artifactId>-->
+<!--                <version>7.13.0</version>-->
+<!--            </plugin>-->
         </plugins>
     </build>
 

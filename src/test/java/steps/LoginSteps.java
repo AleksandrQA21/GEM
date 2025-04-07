@@ -9,8 +9,10 @@ import org.testng.Assert;
 import pages.HomePage;
 import pages.LoginPage;
 
+import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.webdriver;
 import static org.testng.Assert.assertTrue;
+import static pages.LoginPage.errorMessage;
 
 /**
  * Step definitions for login feature
@@ -26,12 +28,12 @@ public class LoginSteps {
     }
 
     @When("I enter valid email {string}")
-    public void iEnterValidEmail(String email) {
+    public void iEnterValidEmail(String email) throws InterruptedException {
         loginPage.enterEmail(email);
     }
 
     @When("I enter email {string}")
-    public void iEnterEmail(String email) {
+    public void iEnterEmail(String email) throws InterruptedException {
         loginPage.enterEmail(email);
     }
 
@@ -46,28 +48,28 @@ public class LoginSteps {
     }
 
     @And("I click on the login button")
-    public void iClickOnTheLoginButton() {
+    public void iClickOnTheLoginButton() throws InterruptedException {
         loginPage.clickLoginButton();
     }
 
     @Then("I should be redirected to the homepage")
     public void iShouldBeRedirectedToTheHomepage() throws InterruptedException {
-        // Using Selenide's webdriver().driver().url() to get current URL
-        Thread.sleep(7000);
         String currentUrl = webdriver().driver().url();
-        Assert.assertEquals(currentUrl, "http://34.233.163.207",
+        Assert.assertEquals(currentUrl, "http://34.233.163.207/",
                 "Not redirected to the homepage after login");
     }
 
     @And("I should see user is logged in")
     public void iShouldSeeUserIsLoggedIn() {
+        homePage = new HomePage();
         homePage.verifyUserIsLoggedIn();
     }
 
     @Then("I should see an error message")
     public void iShouldSeeAnErrorMessage() throws InterruptedException {
-        Thread.sleep(5000);
-        assertTrue(loginPage.isErrorMessageDisplayed());
+        loginPage = new LoginPage();
+        errorMessage.shouldBe(visible);
+
     }
 
     @Then("I should remain on the login page")

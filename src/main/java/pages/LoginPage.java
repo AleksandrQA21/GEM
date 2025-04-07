@@ -15,7 +15,7 @@ public class LoginPage extends BasePage {
     public static SelenideElement loginHeading = $x("//h2[contains(text(),'Log In')]");
     public static SelenideElement signUpLink = $x("//a[contains(text(),'Sign Up')]");
     public static SelenideElement forgotPasswordLink = $x("//a[contains(text(),'Forgot Password?')]");
-    public static SelenideElement errorMessage = $(".text-danger");
+    public static SelenideElement errorMessage = $("p.text-danger");
 
 
     public void openLoginPage() {
@@ -33,10 +33,6 @@ public class LoginPage extends BasePage {
 
     public void clickLoginButton() {
         loginButton.shouldBe(Condition.visible, Condition.enabled).click();
-    }
-
-    public boolean isErrorMessageDisplayed() {
-        return errorMessage.isDisplayed();
     }
 
     /**
