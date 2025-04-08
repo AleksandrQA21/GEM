@@ -24,3 +24,14 @@ Feature: Login Functionality
       | aleksandr.titovskoy@greenice.net  | wrong123 |
 ##      |                                   | q1w2e3r4 |
 ##      | aleksandr.titovskoy@greenice.net  |          |
+  Scenario: Forgot password link
+    Given I am on the login page
+    When I click on Forgot Password link
+    Then I should see Recover Password page
+    And I enter valid email "aleksandr.titovskoy+3@greenice.net"
+    And I click Reset button
+    Then I should see Reset Password link sent
+    And email input field is empty
+    And I click on Back to Sign in button
+    Then I should remain on the login page
+
