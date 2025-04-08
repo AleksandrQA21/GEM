@@ -36,10 +36,8 @@ public class HomePage extends BasePage{
         myProfile.shouldBe(visible).click();
     }
 
-    /**
-     * Logout from the website
-     */
-    public void logout() {
+    //Logout from the website
+         public void logout() {
         if (logoutLink.exists()) {
             logoutLink.shouldBe(visible).click();
         } else if (logoutForm.exists()) {

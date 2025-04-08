@@ -35,9 +35,9 @@ public class LoginPage extends BasePage {
         loginButton.shouldBe(Condition.visible, Condition.enabled).click();
     }
 
-    /**
-     * Wait for error message to be displayed and return its text
-     * @return Error message text
+    /*
+     Wait for error message to be displayed and return its text
+     @return Error message text
      */
     public String getErrorMessageText() {
         return errorMessage.shouldBe(Condition.visible).getText();
@@ -51,9 +51,9 @@ public class LoginPage extends BasePage {
         signUpLink.shouldBe(Condition.visible).click();
     }
 
-    /**
-     * Check if on login page by verifying URL
-     * @return true if on login page
+    /*
+     Check if on login page by verifying URL
+     @return true if on login page
      */
     public boolean isOnLoginPage() {
         String currentUrl = webdriver().driver().url();
