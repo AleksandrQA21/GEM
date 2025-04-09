@@ -12,9 +12,11 @@ import io.cucumber.java.en.When;
 import io.qameta.allure.Step;
 import org.testng.Assert;
 import pages.ForgotPasswordPage;
+import pages.GetVerifiedPage;
 import pages.HomePage;
 import pages.LoginPage;
 
+import static com.codeborne.selenide.Condition.clickable;
 import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.webdriver;
 import static org.testng.Assert.assertEquals;
@@ -29,12 +31,14 @@ public class LoginSteps {
     public LoginPage loginPage;
     public HomePage homePage;
     public ForgotPasswordPage forgotPasswordPage;
+    public GetVerifiedPage getVerifiedPage;
 
     @Before
     public void setUp() {
         loginPage = new LoginPage();
         homePage = new HomePage();
         forgotPasswordPage = new ForgotPasswordPage();
+        getVerifiedPage = new GetVerifiedPage();
     }
 
     @After
@@ -180,5 +184,39 @@ public class LoginSteps {
         boolean isValidMessage = validationMessage.contains("Please fill out this field") ||
                 validationMessage.contains("fill") ||
                 validationMessage.contains("required");
+    }
+
+    @When("I click on Sign Up button")
+    @Step("Clicking on Sign Up button")
+    public void iClickOnSignUpButton() {
+        loginPage.clickSignUpLink();
+    }
+
+    @Then("I should be redirected to the Get Verified page")
+    @Step("Verifying redirection to get verified page")
+    public void iShouldBeRedirectedToTheGetVerifiedPage() {
+        getVerifiedPage.isOnGetVerifiedPage();
+    }
+
+    @And("I should see Player Profile")
+    @Step("Verifying all elements on Get Verified page")
+    public void iShouldSeePlayerProfile() {
+        GetVerifiedPage.getVerifiedTitle.shouldBe(visible);
+        GetVerifiedPage.newRecruits.shouldBe(visible);
+        GetVerifiedPage.returningMemberTitle.shouldBe(visible);
+        GetVerifiedPage.continueLoginTitle.shouldBe(visible);
+        GetVerifiedPage.memberLoginButton.shouldBe(clickable);
+        GetVerifiedPage.firstName.shouldBe(visible);
+        GetVerifiedPage.lastName.shouldBe(visible);
+        GetVerifiedPage.selectPrimaryPositionDropDown.shouldBe(visible);
+        GetVerifiedPage.schoolInputField.shouldBe(visible);
+        GetVerifiedPage.selectStateDropDown.shouldBe(visible);
+        GetVerifiedPage.selectGraduationYearDropDown.shouldBe(visible);
+        GetVerifiedPage.parentRadioButton.shouldBe(clickable);
+        GetVerifiedPage.studentRadioButton.shouldBe(clickable);
+        GetVerifiedPage.nextButton.shouldBe(clickable);
+        GetVerifiedPage.memberLoginButton.shouldBe(clickable);
+        GetVerifiedPage.logoPicture.shouldBe(visible);
+        GetVerifiedPage.menuButton.shouldBe(clickable);
     }
 }

@@ -59,4 +59,5 @@ public class LoginPage extends BasePage {
         String currentUrl = webdriver().driver().url();
         return currentUrl.contains("/login");
     }
+
 }

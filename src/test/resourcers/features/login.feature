@@ -53,3 +53,9 @@ Feature: Login Functionality
     And I click on Back to Sign in button
     Then I should remain on the login page
 
+   @severity=critical @story=CheckSignUpButton @regression
+   Scenario: Check Sign Up link button
+     Given I am on the login page
+     When I click on Sign Up button
+     Then I should be redirected to the Get Verified page
+     And I should see Player Profile
