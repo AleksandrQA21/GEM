@@ -41,14 +41,6 @@ public class LoginSteps {
         getVerifiedPage = new GetVerifiedPage();
     }
 
-    @After
-    public void tearDown() {
-        Selenide.clearBrowserCookies();
-        Selenide.clearBrowserLocalStorage();
-        Selenide.closeWebDriver();
-    }
-
-
     @Given("I am on the login page")
     @Step("Opening the login page")
     public void iAmOnTheLoginPage() {
