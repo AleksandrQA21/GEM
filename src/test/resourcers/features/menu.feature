@@ -39,3 +39,19 @@ Feature: As a User
     And I click on About button
     And I click on Testimonials button
     Then I should see Testimonials section on About Us page
+
+  @severity=critical @story=CheckFacSection @regression @smoke
+  Scenario: Check F.A.C. button
+    Given I open G.E.M. Class Recruiting website as a guest
+    When I click on Menu button
+    And I click on About button
+    And I click on FAC button
+    Then I should see FAC section on About Us page
+
+  @severity=critical @story=ContactUsSection @regression @smoke
+  Scenario: Check Contact Us button
+    Given I open G.E.M. Class Recruiting website as a guest
+    When I click on Menu button
+    And I click on About button
+    And I click on Contact Us button
+    Then I should see Contact Us section on About Us page

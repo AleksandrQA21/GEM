@@ -12,6 +12,7 @@ import io.qameta.allure.Step;
 import org.testng.Assert;
 import pages.*;
 
+import static com.codeborne.selenide.Condition.attribute;
 import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.webdriver;
 
@@ -108,5 +109,42 @@ public class MenuSteps {
         AboutUsPage.testimonialsTitle.shouldBe(visible);
         AboutUsPage.textTestimonials.shouldBe(visible);
         AboutUsPage.testimonialsSlider.shouldBe(visible);
+    }
+
+    @And("I click on FAC button")
+    @Step("Clicking on FAC button")
+    public void iClickOnFACButton() {
+        HomePage.menuFacButton.shouldBe(visible).click();
+    }
+
+    @Then("I should see FAC section on About Us page")
+    @Step("Verifying F.A.C. section on About Us page")
+    public void iShouldSeeFACSectionOnAboutUsPage() {
+        String currentUrl = webdriver().driver().url();
+        Assert.assertEquals(currentUrl, AboutUsPage.FAC_URL,
+                "Not redirected to the What We Do section");
+        AboutUsPage.facTitle.shouldBe(visible);
+        AboutUsPage.facAccordion.shouldBe(visible);
+    }
+
+    @Then("I should see Contact Us section on About Us page")
+    @Step("Verifying Contact Us section on About Us page")
+    public void iShouldSeeContactUsSectionOnAboutUsPage() {
+        String currentUrl = webdriver().driver().url();
+        Assert.assertEquals(currentUrl, AboutUsPage.CONTACT_US_URL,
+                "Not redirected to the What We Do section");
+        AboutUsPage.contactUsTitle.shouldBe(visible);
+        AboutUsPage.contactUsFormTitle.shouldBe(visible);
+        AboutUsPage.contactUsFirstNameInput.shouldBe(visible).shouldHave(attribute("placeholder","First Name"));
+        AboutUsPage.contactUsLastNameInput.shouldBe(visible).shouldHave(attribute("placeholder","Last Name"));
+        AboutUsPage.contactUsEmailInput.shouldBe(visible).shouldHave(attribute("placeholder","Email Address"));
+        AboutUsPage.contactUsTextInput.shouldBe(visible).shouldHave(attribute("placeholder","Message..."));
+        AboutUsPage.contactUsSubmitButton.shouldBe(visible);
+    }
+
+    @And("I click on Contact Us button")
+    @Step("Clicking on Contact Us button")
+    public void iClickOnContactUsButton() {
+        HomePage.menuContactUsButton.shouldBe(visible).click();
     }
 }
