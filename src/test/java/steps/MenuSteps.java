@@ -66,6 +66,7 @@ public class MenuSteps {
                 "Not redirected to the What We Do section");
         AboutUsPage.whatWeDoTitle.shouldBe(visible);
         AboutUsPage.supportCollegeTitle.shouldBe(visible);
+        AboutUsPage.supportStudentsTitle.shouldBe(visible);
         AboutUsPage.text1WhatWeDo.shouldBe(visible);
         AboutUsPage.text2WhatWeDo.shouldBe(visible);
     }
@@ -90,5 +91,22 @@ public class MenuSteps {
                 "Not redirected to the What We Do section");
         AboutUsPage.backgroundTitle.shouldBe(visible);
         AboutUsPage.backgroundSlider.shouldBe(visible);
+    }
+
+    @And("I click on Testimonials button")
+    @Step("Clicking on Testimonials button")
+    public void iClickOnTestimonialsButton() {
+        HomePage.menuTestimonialsButton.shouldBe(visible).click();
+    }
+
+    @Then("I should see Testimonials section on About Us page")
+    @Step("Verifying 'Testimonials' section on About Us page")
+    public void iShouldSeeTestimonialsSectionOnAboutUsPage() {
+        String currentUrl = webdriver().driver().url();
+        Assert.assertEquals(currentUrl, AboutUsPage.TESTIMONIALS_URL,
+                "Not redirected to the What We Do section");
+        AboutUsPage.testimonialsTitle.shouldBe(visible);
+        AboutUsPage.textTestimonials.shouldBe(visible);
+        AboutUsPage.testimonialsSlider.shouldBe(visible);
     }
 }
