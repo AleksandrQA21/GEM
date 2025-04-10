@@ -21,6 +21,7 @@ import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.webdriver;
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
+import static pages.HomePage.HOME_URL;
 import static pages.LoginPage.errorMessage;
 import static pages.LoginPage.forgotPasswordLink;
 
@@ -81,7 +82,7 @@ public class LoginSteps {
     @Step("Verifying redirection to homepage")
     public void iShouldBeRedirectedToTheHomepage() {
         String currentUrl = webdriver().driver().url();
-        Assert.assertEquals(currentUrl, "http://34.233.163.207/",
+        Assert.assertEquals(currentUrl, HomePage.HOME_URL,
                 "Not redirected to the homepage after login");
     }
 

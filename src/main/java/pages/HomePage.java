@@ -12,7 +12,7 @@ import static com.codeborne.selenide.Selenide.*;
  * Page Object for Home Page
  */
 public class HomePage extends BasePage{
-    private static final String HOME_URL = "http://34.233.163.207/";
+    public static final String HOME_URL = "http://34.233.163.207/";
     public static SelenideElement logoutForm = $("#logoutForm");
     public static SelenideElement siteLogo = $(".site-branding img");
     public static SelenideElement myProfile = $(By.cssSelector("a.sec-btn.wow.fadeInUp.my-4"));
@@ -68,6 +68,7 @@ public class HomePage extends BasePage{
     public void navigateToMyAccount() {
         myProfile.shouldBe(visible).click();
     }
+
 
     //Logout from the website
          public void logout() {
