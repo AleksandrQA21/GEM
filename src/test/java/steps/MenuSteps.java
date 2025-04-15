@@ -12,8 +12,7 @@ import io.qameta.allure.Step;
 import org.testng.Assert;
 import pages.*;
 
-import static com.codeborne.selenide.Condition.attribute;
-import static com.codeborne.selenide.Condition.visible;
+import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selenide.webdriver;
 
 /**
@@ -134,11 +133,13 @@ public class MenuSteps {
         Assert.assertEquals(currentUrl, AboutUsPage.CONTACT_US_URL,
                 "Not redirected to the What We Do section");
         AboutUsPage.contactUsTitle.shouldBe(visible);
+        AboutUsPage.contactUsForm.shouldBe(visible);
         AboutUsPage.contactUsFormTitle.shouldBe(visible);
         AboutUsPage.contactUsFirstNameInput.shouldBe(visible).shouldHave(attribute("placeholder","First Name"));
         AboutUsPage.contactUsLastNameInput.shouldBe(visible).shouldHave(attribute("placeholder","Last Name"));
         AboutUsPage.contactUsEmailInput.shouldBe(visible).shouldHave(attribute("placeholder","Email Address"));
         AboutUsPage.contactUsTextInput.shouldBe(visible).shouldHave(attribute("placeholder","Message..."));
+        AboutUsPage.contactUsPhoneInput.shouldBe(visible).shouldHave(attribute("placeholder","Phone No."));
         AboutUsPage.contactUsSubmitButton.shouldBe(visible);
     }
 
@@ -146,5 +147,42 @@ public class MenuSteps {
     @Step("Clicking on Contact Us button")
     public void iClickOnContactUsButton() {
         HomePage.menuContactUsButton.shouldBe(visible).click();
+    }
+
+    @And("I click on Our Team button")
+    @Step("Clicking on Our Team button")
+    public void iClickOnOurTeamButton() {
+        HomePage.menuOurTeamButton.shouldBe(visible).click();
+    }
+
+    @Then("I should see Our Team section")
+    @Step("Verifying Our Team section")
+    public void iShouldSeeOurTeamSection() {
+        String currentUrl = webdriver().driver().url();
+        Assert.assertEquals(currentUrl, AboutUsPage.OUR_TEAM_URL,
+                "Not redirected to Our Team section");
+        AboutUsPage.meetOurTeamTitle.shouldBe(visible);
+        AboutUsPage.mainTeamSection.shouldBe(visible);
+        AboutUsPage.moreAboutUsButton.shouldBe(visible).shouldBe(clickable);
+
+    }
+
+    @And("I click on More About Us At GEM Class button")
+    @Step("Clicking on More About Us button")
+    public void iClickOnMoreAboutUsAtGEMClassButton() {
+        AboutUsPage.moreAboutUsButton.shouldBe(visible).click();
+    }
+
+    @Then("I should see About Us section")
+    @Step("Verifying About Us page")
+    public void iShouldSeeAboutUsSection() {
+        String currentUrl = webdriver().driver().url();
+        Assert.assertEquals(currentUrl, AboutUsPage.ABOUT_US_URL,
+                "Not redirected to the What We Do section");
+        AboutUsPage.whatWeDoTitle.shouldBe(visible);
+        AboutUsPage.supportCollegeTitle.shouldBe(visible);
+        AboutUsPage.supportStudentsTitle.shouldBe(visible);
+        AboutUsPage.text1WhatWeDo.shouldBe(visible);
+        AboutUsPage.text2WhatWeDo.shouldBe(visible);
     }
 }

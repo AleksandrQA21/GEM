@@ -55,3 +55,12 @@ Feature: As a User
     And I click on About button
     And I click on Contact Us button
     Then I should see Contact Us section on About Us page
+
+  @severity=critical @story=OurTeamSection @regression @smoke
+  Scenario: Check Our Team button
+    Given I open G.E.M. Class Recruiting website as a guest
+    When I click on Menu button
+    And I click on Our Team button
+    Then I should see Our Team section
+    And I click on More About Us At GEM Class button
+    Then I should see About Us section
