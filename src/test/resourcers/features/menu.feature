@@ -64,3 +64,12 @@ Feature: As a User
     Then I should see Our Team section
     And I click on More About Us At GEM Class button
     Then I should see About Us section
+
+  @severity=critical @story=ScholarshipsSection @regression @smoke
+  Scenario: Check Scholarships button
+    Given I open G.E.M. Class Recruiting website as a guest
+    When I click on Menu button
+    And I click on Scholarships button
+    Then I should see Scholarships page
+    And I click on Recruiting Info button
+    Then I should redirect to Need To Know page

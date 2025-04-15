@@ -185,4 +185,41 @@ public class MenuSteps {
         AboutUsPage.text1WhatWeDo.shouldBe(visible);
         AboutUsPage.text2WhatWeDo.shouldBe(visible);
     }
+
+    @And("I click on Scholarships button")
+    @Step("Clicking on Scholarships button")
+    public void iClickOnScholarshipsButton() {
+        HomePage.menuScholarshipsButton.shouldBe(visible).click();
+    }
+
+    @Then("I should see Scholarships page")
+    @Step("Verifying Scholarships page")
+    public void iShouldSeeScholarshipsSection() {
+        String currentUrl = webdriver().driver().url();
+        Assert.assertEquals(currentUrl, ScholarshipsPage.SCHOLARSHIPS_URL,
+                "Not redirected to Scholarships page");
+        ScholarshipsPage.h1Title.shouldBe(visible);
+        ScholarshipsPage.h2Title.shouldBe(visible);
+        ScholarshipsPage.learnMoreSection.scrollTo().shouldBe(visible);
+        ScholarshipsPage.learnMoreSectionForm.scrollTo().shouldBe(visible);
+        ScholarshipsPage.firstNameInput.scrollTo().shouldBe(visible);
+        ScholarshipsPage.lastNameInput.scrollTo().shouldBe(visible);
+        ScholarshipsPage.emailInput.scrollTo().shouldBe(visible);
+        ScholarshipsPage.sendFormButton.scrollTo().shouldBe(visible).shouldBe(clickable);
+        ScholarshipsPage.recruitingInfoButton.shouldBe(visible).shouldBe(clickable);
+    }
+
+    @And("I click on Recruiting Info button")
+    @Step("Clicking on Recruiting Info button")
+    public void iClickOnRecruitingInfoButton() {
+        ScholarshipsPage.recruitingInfoButton.shouldBe(visible).click();
+    }
+
+    @Then("I should redirect to Need To Know page")
+    @Step("Check redirect to Need To Know page")
+    public void iShouldRedirectToNeedToKnowPage() {
+        String currentUrl = webdriver().driver().url();
+        Assert.assertEquals(currentUrl, NeedToKnowPage.NEED_TO_KNOW_URL,
+                "Not redirected to Scholarships page");
+    }
 }
