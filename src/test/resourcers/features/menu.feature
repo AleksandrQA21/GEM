@@ -73,3 +73,11 @@ Feature: As a User
     Then I should see Scholarships page
     And I click on Recruiting Info button
     Then I should redirect to Need To Know page
+
+  @severity=critical @story=GradesSection @regression @smoke
+  Scenario: Check Grades button
+    Given I open G.E.M. Class Recruiting website as a guest
+    When I click on Menu button
+    And I click on Recruiting button
+    And I click on Grades button
+    Then I should see Grades section on Need To Know page

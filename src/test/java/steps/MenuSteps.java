@@ -222,4 +222,32 @@ public class MenuSteps {
         Assert.assertEquals(currentUrl, NeedToKnowPage.NEED_TO_KNOW_URL,
                 "Not redirected to Scholarships page");
     }
+
+    @When("I click on Recruiting button")
+    @Step("Clicking on Recruiting button")
+    public void iClickOnRecruitingButton() {
+        HomePage.menuRecruitingButton.shouldBe(visible).click();
+    }
+
+    @And("I click on Grades button")
+    @Step("Clicking on Grades button")
+    public void iClickOnGradesButton() {
+        HomePage.menuGradesButton.shouldBe(visible).click();
+    }
+
+    @Then("I should see Grades section on Need To Know page")
+    @Step("Verifying Grades section")
+    public void iShouldSeeGradesSectionOnNeedToKnowPage() {
+        String currentUrl = webdriver().driver().url();
+        Assert.assertEquals(currentUrl, NeedToKnowPage.GRADES_URL,
+                "Not redirected to Scholarships page");
+        NeedToKnowPage.h1TitleGradesSection.shouldBe(visible);
+        NeedToKnowPage.h2TitleGradesSection.shouldBe(visible);
+        NeedToKnowPage.createPlayerProfileButtonGradeSection.shouldBe(visible).shouldBe(clickable);
+        NeedToKnowPage.gradesLink.shouldBe(visible).shouldBe(clickable);
+        NeedToKnowPage.gamePlanLink.shouldBe(visible).shouldBe(clickable);
+        NeedToKnowPage.guidLinesLink.shouldBe(visible).shouldBe(clickable);
+        NeedToKnowPage.recruitingCalendarsLink.shouldBe(visible).shouldBe(clickable);
+
+    }
 }
