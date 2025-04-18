@@ -1,5 +1,6 @@
 @feature=MenuFeature
-Feature: As a User
+Feature: Frontend Menu Functionality
+  As a User
   I want to be able to see clickable SideMenu button
   So that I can access to menu options
 
