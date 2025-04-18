@@ -82,3 +82,11 @@ Feature: Frontend Menu Functionality
     And I click on Recruiting button
     And I click on Grades button
     Then I should see Grades section on Need To Know page
+    
+  @severity=critical @story=GameplanSection @regression @smoke
+  Scenario: Check Gameplan button
+    Given I open G.E.M. Class Recruiting website as a guest
+    When I click on Menu button
+    And I click on Recruiting button
+    And I click on Gameplan button
+    Then I should see Gameplan page
