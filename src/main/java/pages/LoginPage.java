@@ -1,6 +1,7 @@
 package pages;
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
+import com.codeborne.selenide.WebDriverRunner;
 import org.openqa.selenium.By;
 
 import static com.codeborne.selenide.Selenide.*;
@@ -8,7 +9,7 @@ import static com.codeborne.selenide.Selenide.*;
 
 public class LoginPage extends BasePage {
 
-    public static final String LOGIN_URL = "http://34.233.163.207/login";
+    public static final String LOGIN_URL = "/login";
     public static SelenideElement emailInput = $("input[name='email']");
     public static SelenideElement passwordInput = $("input[name='password']");
     public static SelenideElement loginButton = $("button.sec-btn");
@@ -19,7 +20,10 @@ public class LoginPage extends BasePage {
 
 
     public void openLoginPage() {
-        open(LOGIN_URL);
+        openBasePage(BASE_URL + LOGIN_URL);
+//        open(LOGIN_URL);
+        // После открытия страницы максимизируем окно
+//        WebDriverRunner.getWebDriver().manage().window().maximize();
         loginHeading.shouldBe(Condition.visible);
     }
 

@@ -14,6 +14,7 @@ import pages.*;
 
 import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selenide.webdriver;
+import static com.codeborne.selenide.Selenide.open;
 import static com.codeborne.selenide.CollectionCondition.sizeGreaterThan;
 
 /**
@@ -27,7 +28,6 @@ public class MenuSteps {
     public void setUp() {
         homePage = new HomePage();
         aboutUsPage = new AboutUsPage();
-        WebDriverRunner.getWebDriver().manage().window().maximize();
 
     }
 
@@ -172,25 +172,11 @@ public class MenuSteps {
 
     @And("I click on More About Us At GEM Class button")
     @Step("Clicking on More About Us button")
-    public void iClickOnMoreAboutUsAtGEMClassButton() {
-        try {
-            // Используем JavaScript для прокрутки и клика
-            System.out.println("check-1");
-
-            Selenide.executeJavaScript("arguments[0].scrollIntoView({block: 'center'});", AboutUsPage.moreAboutUsButton);
-            System.out.println("check-2");
-            
-            // Проверяем, что элемент видим и кликабелен
-            AboutUsPage.moreAboutUsButton.shouldBe(visible).shouldBe(clickable);
-            
-            // Используем JavaScript для клика
-            Selenide.executeJavaScript("arguments[0].click();", AboutUsPage.moreAboutUsButton);
-        } catch (Exception e) {
-            // Альтернативный способ клика
-            System.out.println("Первичная попытка клика не удалась, пробуем альтернативный метод");
+    public void iClickOnMoreAboutUsAtGEMClassButton() throws InterruptedException {
             AboutUsPage.moreAboutUsButton.scrollTo();
-            Selenide.actions().moveToElement(AboutUsPage.moreAboutUsButton).click().perform();
-        }
+            Thread.sleep(2000);
+            AboutUsPage.moreAboutUsButton.shouldBe(visible).shouldBe(clickable);
+            AboutUsPage.moreAboutUsButton.click();
     }
 
     @Then("I should see About Us section")
@@ -282,30 +268,12 @@ public class MenuSteps {
         String currentUrl = webdriver().driver().url();
         Assert.assertEquals(currentUrl, NeedToKnowPage.GAMEPLAN_URL,
                 "Not redirected to Gameplan page");
-        
-        try {
-            // Прокручиваем к заголовку с дополнительным отступом вверх
-            Selenide.executeJavaScript("arguments[0].scrollIntoView({block: 'center', behavior: 'smooth'});", NeedToKnowPage.gameplanTitle);
-            Selenide.sleep(500); // Небольшая пауза для стабилизации прокрутки
-            NeedToKnowPage.gameplanTitle.shouldBe(visible);
-            
-            // Проверка, что список элементов содержимого существует и не пуст
-            NeedToKnowPage.gameplanContentItems.shouldHave(sizeGreaterThan(0));
-            
-            // Проверка видимости каждого элемента с JavaScript прокруткой
-            for (int i = 0; i < 5; i++) {
-                Selenide.executeJavaScript("arguments[0].scrollIntoView({block: 'center', behavior: 'smooth'});", 
-                                          NeedToKnowPage.gameplanContentItems.get(i));
-                Selenide.sleep(300); // Небольшая пауза между прокрутками
-                NeedToKnowPage.gameplanContentItems.get(i).shouldBe(visible);
-            }
-        } catch (Exception e) {
-            // В случае ошибки прокрутки, уменьшим количество проверяемых элементов
-            System.out.println("Ошибка при проверке элементов: " + e.getMessage());
-            NeedToKnowPage.gameplanTitle.shouldBe(visible);
-            if (!NeedToKnowPage.gameplanContentItems.isEmpty()) {
-                NeedToKnowPage.gameplanContentItems.first().shouldBe(visible);
-            }
+        NeedToKnowPage.gameplanTitle.scrollTo().shouldBe(visible);
+        // Проверка, что список элементов содержимого существует и не пуст
+        NeedToKnowPage.gameplanContentItems.shouldHave(sizeGreaterThan(0));
+        // Проверка видимости каждого элемента с JavaScript прокруткой
+        for (int i = 0; i < 5; i++) {
+            NeedToKnowPage.gameplanContentItems.get(i).shouldBe(visible);
         }
     }
 }

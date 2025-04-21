@@ -2,6 +2,7 @@ package pages;
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
 import com.codeborne.selenide.*;
+import com.codeborne.selenide.WebDriverRunner;
 import org.openqa.selenium.By;
 
 import static com.codeborne.selenide.Condition.clickable;
@@ -50,7 +51,10 @@ public class HomePage extends BasePage{
 
 
     public void openHomePage() {
-        open(HOME_URL);
+        openBasePage(HOME_URL);
+//        open(HOME_URL);
+        // После открытия страницы максимизируем окно
+//        WebDriverRunner.getWebDriver().manage().window().maximize();
         getVerifiedButton.shouldBe(visible);
     }
     public void verifyUserIsLoggedIn() {

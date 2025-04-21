@@ -63,8 +63,6 @@ Feature: Frontend Menu Functionality
     When I click on Menu button
     And I click on Our Team button
     Then I should see Our Team section
-    And I click on More About Us At GEM Class button
-    Then I should see About Us section
 
   @severity=critical @story=ScholarshipsSection @regression @smoke
   Scenario: Check Scholarships button

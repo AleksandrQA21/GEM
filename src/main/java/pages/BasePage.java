@@ -10,14 +10,16 @@ import org.slf4j.LoggerFactory;
 
 import java.time.Duration;
 
-import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.Selenide.webdriver;
+import static com.codeborne.selenide.Selenide.*;
 
 
 /**
  * Base page class that all page objects will inherit from
  */
 public abstract class BasePage {
+
+    public static final String BASE_URL = "http://34.233.163.207";
+
 
     /**
      * Constructor for Base Page class
@@ -31,6 +33,11 @@ public abstract class BasePage {
      */
     public String getCurrentUrl() {
         return webdriver().driver().url();
+    }
+    // Метод для открытия страницы, который должны вызывать дочерние классы
+    protected void openBasePage(String url) {
+        open(url);
+        WebDriverRunner.getWebDriver().manage().window().maximize();
     }
 
     /**
