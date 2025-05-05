@@ -413,4 +413,28 @@ public class MenuSteps {
         GetVerifiedPage.menuButton.shouldBe(visible).shouldBe(clickable);
 
     }
+
+    @And("I click on Coach Directory button")
+    @Step("Clicking on Coach Directory button")
+    public void iClickOnCoachDirectoryButton() {
+        hamburgerMenu.clickCoachDirectory();
+    }
+
+    @Then("I should see Coach Directory page")
+    @Step("Verifying Coach Directory page")
+    public void iShouldSeeCoachDirectoryPage() throws InterruptedException {
+        String currentUrl = webdriver().driver().url();
+        Assert.assertEquals(currentUrl, CoachDirectoryPage.COACH_DIRECTORY_URL,
+                "Not redirected to Coach Directory page");
+        CoachDirectoryPage.coachDirectoryTitle.shouldBe(visible);
+        CoachDirectoryPage.coachGridCards.shouldBe(visible);
+        CoachDirectoryPage.collegeNameDropDown.shouldBe(visible).shouldBe(clickable);
+        CoachDirectoryPage.divisionLevelDropDown.shouldBe(visible).shouldBe(clickable);
+        CoachDirectoryPage.stateDropDown.shouldBe(visible).shouldBe(clickable);
+        CoachDirectoryPage.resetButton.shouldBe(visible).shouldBe(clickable);
+        Selenide.executeJavaScript("arguments[0].scrollIntoView(true);", CoachDirectoryPage.nextButton);
+        CoachDirectoryPage.nextButton.shouldBe(visible).shouldBe(clickable);
+        Selenide.executeJavaScript("arguments[0].scrollIntoView(true);", CoachDirectoryPage.previousButton);
+        CoachDirectoryPage.previousButton.shouldBe(visible).shouldBe(clickable);
+    }
 }

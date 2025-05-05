@@ -120,3 +120,11 @@ Feature: Frontend Menu Functionality
     And I click on Athletes button
     And I click on My Profile button
     Then I should see Get Verified page
+
+  @severity=critical @story=CoachDirectorySection @regression @smoke
+  Scenario: Check Coach Directory button
+    Given I open G.E.M. Class Recruiting website as a guest
+    When I click on Menu button
+    And I click on Athletes button
+    And I click on Coach Directory button
+    Then I should see Coach Directory page
