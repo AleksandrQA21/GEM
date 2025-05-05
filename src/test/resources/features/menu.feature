@@ -128,3 +128,11 @@ Feature: Frontend Menu Functionality
     And I click on Athletes button
     And I click on Coach Directory button
     Then I should see Coach Directory page
+
+  @severity=critical @story=StudyGuideSection @regression @smoke
+  Scenario: Check Study Guide button
+    Given I open G.E.M. Class Recruiting website as a guest
+    When I click on Menu button
+    And I click on Athletes button
+    And I click on Study Guide button
+    Then I should see Study Guide page

@@ -437,4 +437,22 @@ public class MenuSteps {
         Selenide.executeJavaScript("arguments[0].scrollIntoView(true);", CoachDirectoryPage.previousButton);
         CoachDirectoryPage.previousButton.shouldBe(visible).shouldBe(clickable);
     }
+
+    @And("I click on Study Guide button")
+    @Step("Clicking on Study Guide button")
+    public void iClickOnStudyGuideButton() {
+        hamburgerMenu.clickStudyGuide();
+    }
+
+    @Then("I should see Study Guide page")
+    @Step("Verifying Study Guide page")
+    public void iShouldSeeStudyGuidePage() {
+        String currentUrl = webdriver().driver().url();
+        Assert.assertEquals(currentUrl, StudyGuidePage.STUDY_GUIDE_URL,
+                "Not redirected to Study Guide page");
+        StudyGuidePage.studyGuideTitle.shouldBe(visible);
+        StudyGuidePage.studyGuideText.shouldBe(visible);
+        StudyGuidePage.itemCardsGrid.shouldBe(visible);
+
+    }
 }
