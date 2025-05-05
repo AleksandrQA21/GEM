@@ -11,7 +11,9 @@ public class NeedToKnowPage extends BasePage{
     public static final String NEED_TO_KNOW_URL = "http://34.233.163.207/need-to-know";
     public static final String GRADES_URL = "http://34.233.163.207/need-to-know#grades";
     public static final String GAMEPLAN_URL = "http://34.233.163.207/need-to-know#gameplan";
-    
+    public static final String GUIDELINES_URL = "http://34.233.163.207/need-to-know#guidelines";
+    public static final String CALENDAR_URL = "http://34.233.163.207/need-to-know#calendar";
+
     // Grades section elements
     public static SelenideElement h1TitleGradesSection = $(By.xpath("//h2[contains(text(),'HIT. THE. BOOKS.')]"));
     public static SelenideElement h2TitleGradesSection = $(By.xpath("//h2[contains(text(),'NEED HELP WITH NCAA OR NAIA ELIGIBILITY?')]"));
@@ -24,5 +26,15 @@ public class NeedToKnowPage extends BasePage{
     // Gameplan section elements
     public static SelenideElement gameplanTitle = $(By.xpath("//h2[contains(text(),'CREATE')]"));
     public static ElementsCollection gameplanContentItems = $$(By.cssSelector("#gameplan .class-trainer-review"));
+    
+    // Guidelines section elements
+    public static SelenideElement guidelinesTitle = $(By.xpath("//h2[contains(text(),'GUIDELINES')]"));
+    public static SelenideElement guidelinesContent = $(By.xpath("//p[contains(text(), 'It is EXTREMELY')]"));
+    public static ElementsCollection guidelinesLinks = $$(By.cssSelector("div.subtitle-button > a"));
+
+    // Calendar section elements
+    public static SelenideElement calendarTitle = $(By.xpath("//h2[contains(text(),'RECRUITING CALENDARS')]"));
+    public static SelenideElement calendarContent = $(By.xpath("//p[contains(text(), 'Nothing raises more')]"));
+    public static ElementsCollection calendarLinks = $$(By.cssSelector("div.subtitle-button > a"));
 }
 

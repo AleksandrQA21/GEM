@@ -7,7 +7,7 @@ import org.openqa.selenium.By;
 import static com.codeborne.selenide.Selenide.*;
 
 public class GetVerifiedPage {
-    public static final String LOGIN_URL = "http://34.233.163.207/get-verified";
+    public static final String GET_VERIFIED_PAGE_URL = "http://34.233.163.207/get-verified";
     public static SelenideElement getVerifiedTitle = $(By.xpath("//h1[contains(text(),'G.E.M. CLASS PLAYER PROFILE')]"));
     public static SelenideElement newRecruits = $(By.xpath("//h2[contains(text(),'New recruits')]"));
     public static SelenideElement returningMemberTitle = $(By.xpath("//h2[contains(text(),'Returning member')]"));
@@ -26,7 +26,7 @@ public class GetVerifiedPage {
     public static SelenideElement menuButton = $(By.id("openMenuBtn"));
 
     public void openGetVerifiedPage() {
-        open(LOGIN_URL);
+        open(GET_VERIFIED_PAGE_URL);
         getVerifiedTitle.shouldBe(Condition.visible);
     }
 

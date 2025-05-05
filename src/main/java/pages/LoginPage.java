@@ -21,9 +21,6 @@ public class LoginPage extends BasePage {
 
     public void openLoginPage() {
         openBasePage(BASE_URL + LOGIN_URL);
-//        open(LOGIN_URL);
-        // После открытия страницы максимизируем окно
-//        WebDriverRunner.getWebDriver().manage().window().maximize();
         loginHeading.shouldBe(Condition.visible);
     }
 

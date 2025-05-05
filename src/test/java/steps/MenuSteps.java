@@ -2,6 +2,7 @@ package steps;
 
 import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.WebDriverRunner;
+import components.HamburgerMenu;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import io.cucumber.java.en.And;
@@ -23,42 +24,74 @@ import static com.codeborne.selenide.CollectionCondition.sizeGreaterThan;
 public class MenuSteps {
     public HomePage homePage;
     public AboutUsPage aboutUsPage;
+    public HamburgerMenu hamburgerMenu;
 
     @Before
     public void setUp() {
         homePage = new HomePage();
         aboutUsPage = new AboutUsPage();
+        hamburgerMenu = new HamburgerMenu();
 
     }
 
     @Given("I open G.E.M. Class Recruiting website as a guest")
     @Step("opening G.E.M. website on Home Page as a guest")
-    public void openWebSiteAsGuest(){
+    public void openWebSiteAsGuest() {
         homePage.openHomePage();
     }
 
     @When("I click on Menu button")
     @Step("Clicking on Menu button")
     public void iClickOnMenuButton() {
-        HomePage.menuButton.shouldBe(visible).click();
+        hamburgerMenu.clickMenuButton();
     }
 
     @Then("I should see all menu's options")
     @Step("Verifying all options in the Menu bSideBar should be visible and clickable")
     public void iShouldSeeAllMenuSOptions() {
-        homePage.verifyMenuOptions();
+        HamburgerMenu.menuButton.shouldBe(visible).shouldBe(clickable);
+        HamburgerMenu.menuHomeButton.shouldBe(visible).shouldBe(clickable);
+        HamburgerMenu.menuAboutButton.shouldBe(visible).shouldBe(clickable);
+        HamburgerMenu.menuOurTeamButton.shouldBe(visible).shouldBe(clickable);
+        HamburgerMenu.menuScholarshipsButton.shouldBe(visible).shouldBe(clickable);
+        HamburgerMenu.menuRecruitingButton.shouldBe(visible).shouldBe(clickable);
+        HamburgerMenu.menuStoreButton.shouldBe(visible).shouldBe(clickable);
+        HamburgerMenu.menuCoachesButton.shouldBe(visible).shouldBe(clickable);
+        HamburgerMenu.menuAthletesButton.shouldBe(visible).shouldBe(clickable);
+        HamburgerMenu.menuLoginButton.shouldBe(visible).shouldBe(clickable);
+        HamburgerMenu.menuGetVerifiedButton.shouldBe(visible).shouldBe(clickable);
+        HamburgerMenu.menuAboutButton.click();
+        HamburgerMenu.menuWhatWeDoButton.shouldBe(visible).shouldBe(clickable);
+        HamburgerMenu.menuBackgroundButton.shouldBe(visible).shouldBe(clickable);
+        HamburgerMenu.menuTestimonialsButton.shouldBe(visible).shouldBe(clickable);
+        HamburgerMenu.menuFacButton.shouldBe(visible).shouldBe(clickable);
+        HamburgerMenu.menuContactUsButton.shouldBe(visible).shouldBe(clickable);
+        HamburgerMenu.menuRecruitingButton.click();
+        HamburgerMenu.menuGradesButton.shouldBe(visible).shouldBe(clickable);
+        HamburgerMenu.menuGamePlanButton.shouldBe(visible).shouldBe(clickable);
+        HamburgerMenu.menuGuidelinesButton.shouldBe(visible).shouldBe(clickable);
+        HamburgerMenu.menuCalendarButton.shouldBe(visible).shouldBe(clickable);
+        HamburgerMenu.menuCoachesButton.click();
+        HamburgerMenu.menuPlayerDirectoryButton.shouldBe(visible).shouldBe(clickable);
+        HamburgerMenu.menuAthletesButton.click();
+        HamburgerMenu.menuMyProfileButton.shouldBe(visible).shouldBe(clickable);
+        HamburgerMenu.menuCoachDirectoryButton.shouldBe(visible).shouldBe(clickable);
+        HamburgerMenu.menuStudyGuideButton.shouldBe(visible).shouldBe(clickable);
+        HamburgerMenu.menuClassRoomButton.shouldBe(visible).shouldBe(clickable);
+        HamburgerMenu.menuFilmToFieldButton.shouldBe(visible).shouldBe(clickable);
+        HamburgerMenu.menuSettingsButton.shouldBe(visible).shouldBe(clickable);
     }
 
     @And("Click on Home button")
     @Step("Clicking on Home button")
     public void clickOnHomeButton() {
-        HomePage.menuHomeButton.shouldBe(visible).click();
+        hamburgerMenu.clickHome();
     }
 
     @And("I click on What We Do button")
     @Step("Clicking on What We Do button")
     public void iClickOnWhatWeDoButton() {
-        HomePage.menuWhatWeDoButton.shouldBe(visible).click();
+        hamburgerMenu.clickWhatWeDo();
     }
 
     @Then("I should see What We do section on About Us page")
@@ -77,13 +110,13 @@ public class MenuSteps {
     @And("I click on About button")
     @Step("Clicking in About button")
     public void iClickOnAboutButton() {
-        HomePage.menuAboutButton.shouldBe(visible).click();
+        hamburgerMenu.clickAbout();
     }
 
     @And("I click on Background button")
     @Step("Clicking on Background button")
     public void iClickOnBackgroundButton() {
-        HomePage.menuBackgroundButton.shouldBe(visible).click();
+        hamburgerMenu.clickBackground();
     }
 
     @Then("I should see Background section on About Us page")
@@ -99,7 +132,7 @@ public class MenuSteps {
     @And("I click on Testimonials button")
     @Step("Clicking on Testimonials button")
     public void iClickOnTestimonialsButton() {
-        HomePage.menuTestimonialsButton.shouldBe(visible).click();
+        hamburgerMenu.clickTestimonials();
     }
 
     @Then("I should see Testimonials section on About Us page")
@@ -138,11 +171,11 @@ public class MenuSteps {
         AboutUsPage.contactUsTitle.shouldBe(visible);
         AboutUsPage.contactUsForm.shouldBe(visible);
         AboutUsPage.contactUsFormTitle.shouldBe(visible);
-        AboutUsPage.contactUsFirstNameInput.shouldBe(visible).shouldHave(attribute("placeholder","First Name"));
-        AboutUsPage.contactUsLastNameInput.shouldBe(visible).shouldHave(attribute("placeholder","Last Name"));
-        AboutUsPage.contactUsEmailInput.shouldBe(visible).shouldHave(attribute("placeholder","Email Address"));
-        AboutUsPage.contactUsTextInput.shouldBe(visible).shouldHave(attribute("placeholder","Message..."));
-        AboutUsPage.contactUsPhoneInput.shouldBe(visible).shouldHave(attribute("placeholder","Phone No."));
+        AboutUsPage.contactUsFirstNameInput.shouldBe(visible).shouldHave(attribute("placeholder", "First Name"));
+        AboutUsPage.contactUsLastNameInput.shouldBe(visible).shouldHave(attribute("placeholder", "Last Name"));
+        AboutUsPage.contactUsEmailInput.shouldBe(visible).shouldHave(attribute("placeholder", "Email Address"));
+        AboutUsPage.contactUsTextInput.shouldBe(visible).shouldHave(attribute("placeholder", "Message..."));
+        AboutUsPage.contactUsPhoneInput.shouldBe(visible).shouldHave(attribute("placeholder", "Phone No."));
         AboutUsPage.contactUsSubmitButton.shouldBe(visible);
     }
 
@@ -173,10 +206,10 @@ public class MenuSteps {
     @And("I click on More About Us At GEM Class button")
     @Step("Clicking on More About Us button")
     public void iClickOnMoreAboutUsAtGEMClassButton() throws InterruptedException {
-            AboutUsPage.moreAboutUsButton.scrollTo();
-            Thread.sleep(2000);
-            AboutUsPage.moreAboutUsButton.shouldBe(visible).shouldBe(clickable);
-            AboutUsPage.moreAboutUsButton.click();
+        AboutUsPage.moreAboutUsButton.scrollTo();
+        Thread.sleep(2000);
+        AboutUsPage.moreAboutUsButton.shouldBe(visible).shouldBe(clickable);
+        AboutUsPage.moreAboutUsButton.click();
     }
 
     @Then("I should see About Us section")
@@ -232,13 +265,13 @@ public class MenuSteps {
     @When("I click on Recruiting button")
     @Step("Clicking on Recruiting button")
     public void iClickOnRecruitingButton() {
-        HomePage.menuRecruitingButton.shouldBe(visible).click();
+        hamburgerMenu.clickRecruiting();
     }
 
     @And("I click on Grades button")
     @Step("Clicking on Grades button")
     public void iClickOnGradesButton() {
-        HomePage.menuGradesButton.shouldBe(visible).click();
+        hamburgerMenu.clickGrades();
     }
 
     @Then("I should see Grades section on Need To Know page")
@@ -255,13 +288,13 @@ public class MenuSteps {
         NeedToKnowPage.guidLinesLink.shouldBe(visible).shouldBe(clickable);
         NeedToKnowPage.recruitingCalendarsLink.shouldBe(visible).shouldBe(clickable);
     }
-    
+
     @And("I click on Gameplan button")
     @Step("Clicking on Gameplan button")
     public void iClickOnGameplanButton() {
-        HomePage.menuGamePlanButton.shouldBe(visible).click();
+        hamburgerMenu.clickGamePlan();
     }
-    
+
     @Then("I should see Gameplan page")
     @Step("Verifying Gameplan page")
     public void iShouldSeeGameplanPage() {
@@ -275,5 +308,109 @@ public class MenuSteps {
         for (int i = 0; i < 5; i++) {
             NeedToKnowPage.gameplanContentItems.get(i).shouldBe(visible);
         }
+    }
+
+    @And("I click on Guidelines button")
+    @Step("Clicking on Guidelines button")
+    public void iClickOnGuidelinesButton() {
+        hamburgerMenu.clickGuidelines();
+    }
+
+    @Then("I should see Guidelines page")
+    @Step("Verifying Guidelines page")
+    public void iShouldSeeGuidelinesPage() {
+        String currentUrl = webdriver().driver().url();
+        Assert.assertEquals(currentUrl, NeedToKnowPage.GUIDELINES_URL,
+                "Not redirected to Guidelines page");
+        NeedToKnowPage.guidelinesTitle.scrollTo().shouldBe(visible);
+        NeedToKnowPage.guidelinesContent.shouldBe(visible);
+        // Проверка, что все ссылки в разделе существуют и отображаются
+        NeedToKnowPage.guidelinesLinks.shouldHave(sizeGreaterThan(0));
+        // Проверка видимости всех ссылок
+        for (int i = 0; i < NeedToKnowPage.guidelinesLinks.size(); i++) {
+            NeedToKnowPage.guidelinesLinks.get(i).scrollTo().shouldBe(visible).shouldBe(clickable);
+        }
+    }
+
+    @And("I click on Calendar button")
+    @Step("Clicking on Calendar button")
+    public void iClickOnCalendarButton() {
+        hamburgerMenu.clickCalendar();
+    }
+
+    @Then("I should see Calendar page")
+    @Step("Verifying Calendar page")
+    public void iShouldSeeCalendarPage() {
+        String currentUrl = webdriver().driver().url();
+        Assert.assertEquals(currentUrl, NeedToKnowPage.CALENDAR_URL,
+                "Not redirected to Calendar page");
+        NeedToKnowPage.calendarTitle.scrollTo().shouldBe(visible);
+        NeedToKnowPage.calendarContent.shouldBe(visible);
+        // Проверка, что все ссылки в разделе существуют и отображаются
+        NeedToKnowPage.calendarLinks.shouldHave(sizeGreaterThan(0));
+        // Проверка видимости всех ссылок
+        for (int i = 0; i < NeedToKnowPage.calendarLinks.size(); i++) {
+            NeedToKnowPage.calendarLinks.get(i).scrollTo().shouldBe(visible).shouldBe(clickable);
+        }
+    }
+
+    @And("I click on Coaches button")
+    @Step("Clicking on Coaches button")
+    public void iClickOnCoachesButton() {
+        hamburgerMenu.clickCoaches();
+    }
+
+    @And("I click on PlayerDirectory button")
+    @Step("Clicking on Player Directory button")
+    public void iClickOnPlayerDirectoryButton() {
+        hamburgerMenu.clickPlayerDirectory();
+    }
+
+    @Then("I should see Guest area page")
+    @Step("Verifying Guest area page")
+    public void iShouldSeeGuestAreaPage() {
+        String currentUrl = webdriver().driver().url();
+        Assert.assertEquals(currentUrl, GuestAreaPage.GUEST_AREA_URL,
+                "Not redirected to Guest Area page");
+        GuestAreaPage.enterPasswordTextGuestAreaPage.shouldBe(visible);
+        GuestAreaPage.h2TitleGuestAreaPage.shouldBe(visible);
+        GuestAreaPage.inputPasswordGuestAreaPage.shouldBe(visible).shouldBe(clickable);
+        GuestAreaPage.goButtonTextGuestAreaPage.shouldBe(visible).shouldBe(clickable);
+    }
+
+    @And("I click on Athletes button")
+    @Step("Clicking on Athletes button ")
+    public void iClickOnAthletesButton() {
+        hamburgerMenu.clickAthletes();
+    }
+
+    @And("I click on My Profile button")
+    @Step("Clicking on My Profile button")
+    public void iClickOnMyProfileButton() {
+        hamburgerMenu.clickMyProfile();
+    }
+
+    @Then("I should see Get Verified page")
+    @Step("Verifying Get Verified page")
+    public void iShouldSeeGetVerifiedPage() {
+        String currentUrl = webdriver().driver().url();
+        Assert.assertEquals(currentUrl, GetVerifiedPage.GET_VERIFIED_PAGE_URL,
+                "Not redirected to Guest Area page");
+        GetVerifiedPage.getVerifiedTitle.shouldBe(visible);
+        GetVerifiedPage.firstName.shouldBe(visible).shouldBe(clickable);
+        GetVerifiedPage.selectPrimaryPositionDropDown.shouldBe(visible).shouldBe(clickable);
+        GetVerifiedPage.schoolInputField.shouldBe(visible);
+        GetVerifiedPage.selectStateDropDown.shouldBe(visible).shouldBe(clickable);
+        GetVerifiedPage.selectGraduationYearDropDown.shouldBe(visible).shouldBe(clickable);
+        GetVerifiedPage.parentRadioButton.shouldBe(visible).shouldBe(clickable);
+        GetVerifiedPage.studentRadioButton.shouldBe(visible).shouldBe(clickable);
+        GetVerifiedPage.nextButton.shouldBe(visible).shouldBe(clickable);
+        GetVerifiedPage.memberLoginButton.shouldBe(visible).shouldBe(clickable);
+        GetVerifiedPage.returningMemberTitle.shouldBe(visible);
+        GetVerifiedPage.newRecruits.shouldBe(visible);
+        GetVerifiedPage.continueLoginTitle.shouldBe(visible);
+        GetVerifiedPage.logoPicture.shouldBe(visible);
+        GetVerifiedPage.menuButton.shouldBe(visible).shouldBe(clickable);
+
     }
 }

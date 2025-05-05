@@ -88,3 +88,35 @@ Feature: Frontend Menu Functionality
     And I click on Recruiting button
     And I click on Gameplan button
     Then I should see Gameplan page
+    
+  @severity=critical @story=GuidelinesSection @regression @smoke
+  Scenario: Check Guidelines button
+    Given I open G.E.M. Class Recruiting website as a guest
+    When I click on Menu button
+    And I click on Recruiting button
+    And I click on Guidelines button
+    Then I should see Guidelines page
+
+  @severity=critical @story=GuidelinesSection @regression @smoke
+  Scenario: Check Calendar button
+    Given I open G.E.M. Class Recruiting website as a guest
+    When I click on Menu button
+    And I click on Recruiting button
+    And I click on Calendar button
+    Then I should see Calendar page
+
+  @severity=critical @story=PlayerDirectorySection @regression @smoke
+  Scenario: Check Player Directory button
+    Given I open G.E.M. Class Recruiting website as a guest
+    When I click on Menu button
+    And I click on Coaches button
+    And I click on PlayerDirectory button
+    Then I should see Guest area page
+
+  @severity=critical @story=MyProfileSection @regression @smoke
+  Scenario: Check My Profile button
+    Given I open G.E.M. Class Recruiting website as a guest
+    When I click on Menu button
+    And I click on Athletes button
+    And I click on My Profile button
+    Then I should see Get Verified page
