@@ -1,0 +1,210 @@
+{
+  "uid" : "ccaac39f04401a61",
+  "name" : "Check Study Guide button",
+  "fullName" : "src/test/resources/features/menu.feature:133",
+  "historyId" : "8a76b962c3d31523db860d82b160af53",
+  "time" : {
+    "start" : 1746634889326,
+    "stop" : 1746634895006,
+    "duration" : 5680
+  },
+  "description" : "  As a User\n  I want to be able to see clickable SideMenu button\n  So that I can access to menu options",
+  "descriptionHtml" : "<p>As a User\nI want to be able to see clickable SideMenu button\nSo that I can access to menu options</p>\n",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ {
+    "name" : "steps.LoginSteps.setUp()",
+    "time" : {
+      "start" : 1746634889326,
+      "stop" : 1746634889326,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "steps.MenuSteps.setUp()",
+    "time" : {
+      "start" : 1746634889326,
+      "stop" : 1746634889326,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  } ],
+  "testStage" : {
+    "description" : "  As a User\n  I want to be able to see clickable SideMenu button\n  So that I can access to menu options",
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "Given I open G.E.M. Class Recruiting website as a guest",
+      "time" : {
+        "start" : 1746634889327,
+        "stop" : 1746634890612,
+        "duration" : 1285
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "When I click on Menu button",
+      "time" : {
+        "start" : 1746634890612,
+        "stop" : 1746634890698,
+        "duration" : 86
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "And I click on Athletes button",
+      "time" : {
+        "start" : 1746634890698,
+        "stop" : 1746634893419,
+        "duration" : 2721
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "And I click on Study Guide button",
+      "time" : {
+        "start" : 1746634893419,
+        "stop" : 1746634894446,
+        "duration" : 1027
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "Then I should see Study Guide page",
+      "time" : {
+        "start" : 1746634894446,
+        "stop" : 1746634894991,
+        "duration" : 545
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 5,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true
+  },
+  "afterStages" : [ {
+    "name" : "steps.CookieCleanupHooks.cleanupBrowserData()",
+    "time" : {
+      "start" : 1746634894991,
+      "stop" : 1746634895006,
+      "duration" : 15
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  } ],
+  "labels" : [ {
+    "name" : "tag",
+    "value" : "feature=MenuFeature"
+  }, {
+    "name" : "severity",
+    "value" : "critical"
+  }, {
+    "name" : "tag",
+    "value" : "story=CheckSideMenuButtonOptions"
+  }, {
+    "name" : "tag",
+    "value" : "regression"
+  }, {
+    "name" : "tag",
+    "value" : "smoke"
+  }, {
+    "name" : "host",
+    "value" : "fv-az1660-752"
+  }, {
+    "name" : "thread",
+    "value" : "3517@fv-az1660-752.main(1)"
+  }, {
+    "name" : "feature",
+    "value" : "Frontend Menu Functionality"
+  }, {
+    "name" : "story",
+    "value" : "Check Study Guide button"
+  }, {
+    "name" : "suite",
+    "value" : "Frontend Menu Functionality"
+  }, {
+    "name" : "testClass",
+    "value" : "Check Study Guide button"
+  }, {
+    "name" : "framework",
+    "value" : "cucumber4jvm"
+  }, {
+    "name" : "language",
+    "value" : "java"
+  }, {
+    "name" : "gherkin_uri",
+    "value" : "file:///home/runner/work/GEM/GEM/src/test/resources/features/menu.feature"
+  }, {
+    "name" : "package",
+    "value" : "src.test.resources.features.menu_feature.Frontend Menu Functionality"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "critical",
+    "retries" : [ ],
+    "categories" : [ ],
+    "tags" : [ "story=CheckSideMenuButtonOptions", "regression", "feature=MenuFeature", "smoke" ]
+  },
+  "source" : "ccaac39f04401a61.json",
+  "parameterValues" : [ ]
+}

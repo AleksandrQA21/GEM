@@ -1,0 +1,210 @@
+{
+  "uid" : "3c64902f55551e5d",
+  "name" : "Check Guidelines button",
+  "fullName" : "src/test/resources/features/menu.feature:93",
+  "historyId" : "9ae81b3328a58e7e5ff63ed6bcc7154a",
+  "time" : {
+    "start" : 1746634860267,
+    "stop" : 1746634865675,
+    "duration" : 5408
+  },
+  "description" : "  As a User\n  I want to be able to see clickable SideMenu button\n  So that I can access to menu options",
+  "descriptionHtml" : "<p>As a User\nI want to be able to see clickable SideMenu button\nSo that I can access to menu options</p>\n",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ {
+    "name" : "steps.LoginSteps.setUp()",
+    "time" : {
+      "start" : 1746634860268,
+      "stop" : 1746634860268,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "steps.MenuSteps.setUp()",
+    "time" : {
+      "start" : 1746634860267,
+      "stop" : 1746634860268,
+      "duration" : 1
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  } ],
+  "testStage" : {
+    "description" : "  As a User\n  I want to be able to see clickable SideMenu button\n  So that I can access to menu options",
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "Given I open G.E.M. Class Recruiting website as a guest",
+      "time" : {
+        "start" : 1746634860269,
+        "stop" : 1746634861510,
+        "duration" : 1241
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "When I click on Menu button",
+      "time" : {
+        "start" : 1746634861511,
+        "stop" : 1746634861595,
+        "duration" : 84
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "And I click on Recruiting button",
+      "time" : {
+        "start" : 1746634861595,
+        "stop" : 1746634864047,
+        "duration" : 2452
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "And I click on Guidelines button",
+      "time" : {
+        "start" : 1746634864047,
+        "stop" : 1746634864955,
+        "duration" : 908
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "Then I should see Guidelines page",
+      "time" : {
+        "start" : 1746634864956,
+        "stop" : 1746634865655,
+        "duration" : 699
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 5,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true
+  },
+  "afterStages" : [ {
+    "name" : "steps.CookieCleanupHooks.cleanupBrowserData()",
+    "time" : {
+      "start" : 1746634865655,
+      "stop" : 1746634865675,
+      "duration" : 20
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  } ],
+  "labels" : [ {
+    "name" : "tag",
+    "value" : "feature=MenuFeature"
+  }, {
+    "name" : "severity",
+    "value" : "critical"
+  }, {
+    "name" : "tag",
+    "value" : "story=CheckSideMenuButtonOptions"
+  }, {
+    "name" : "tag",
+    "value" : "regression"
+  }, {
+    "name" : "tag",
+    "value" : "smoke"
+  }, {
+    "name" : "host",
+    "value" : "fv-az1660-752"
+  }, {
+    "name" : "thread",
+    "value" : "3517@fv-az1660-752.main(1)"
+  }, {
+    "name" : "feature",
+    "value" : "Frontend Menu Functionality"
+  }, {
+    "name" : "story",
+    "value" : "Check Guidelines button"
+  }, {
+    "name" : "suite",
+    "value" : "Frontend Menu Functionality"
+  }, {
+    "name" : "testClass",
+    "value" : "Check Guidelines button"
+  }, {
+    "name" : "framework",
+    "value" : "cucumber4jvm"
+  }, {
+    "name" : "language",
+    "value" : "java"
+  }, {
+    "name" : "gherkin_uri",
+    "value" : "file:///home/runner/work/GEM/GEM/src/test/resources/features/menu.feature"
+  }, {
+    "name" : "package",
+    "value" : "src.test.resources.features.menu_feature.Frontend Menu Functionality"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "critical",
+    "retries" : [ ],
+    "categories" : [ ],
+    "tags" : [ "story=CheckSideMenuButtonOptions", "regression", "feature=MenuFeature", "smoke" ]
+  },
+  "source" : "3c64902f55551e5d.json",
+  "parameterValues" : [ ]
+}

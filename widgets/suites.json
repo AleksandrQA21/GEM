@@ -1,0 +1,26 @@
+{
+  "total" : 2,
+  "items" : [ {
+    "uid" : "eaf6bb5179aff0f4c0f9c37d1fc59479",
+    "name" : "Frontend Menu Functionality",
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 22,
+      "unknown" : 0,
+      "total" : 22
+    }
+  }, {
+    "uid" : "a9c8f11b4c0d702164a4731c0b55ffa0",
+    "name" : "Login Functionality",
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 7,
+      "unknown" : 0,
+      "total" : 7
+    }
+  } ]
+}

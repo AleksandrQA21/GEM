@@ -1,0 +1,291 @@
+[ {
+  "uid" : "2e454f23a063d400",
+  "name" : "Validation empty login or password fields",
+  "time" : {
+    "start" : 1746634762033,
+    "stop" : 1746634763226,
+    "duration" : 1193
+  },
+  "status" : "passed",
+  "severity" : "minor"
+}, {
+  "uid" : "ea949999f7136b24",
+  "name" : "Check Contact Us button",
+  "time" : {
+    "start" : 1746634840031,
+    "stop" : 1746634844324,
+    "duration" : 4293
+  },
+  "status" : "passed",
+  "severity" : "critical"
+}, {
+  "uid" : "a91f2dda50b58cdc",
+  "name" : "Unsuccessful login with invalid credentials",
+  "time" : {
+    "start" : 1746634756164,
+    "stop" : 1746634759261,
+    "duration" : 3097
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "660125f6dac05ed5",
+  "name" : "Check all options are displayed and clickable for Menu button",
+  "time" : {
+    "start" : 1746634814651,
+    "stop" : 1746634823256,
+    "duration" : 8605
+  },
+  "status" : "passed",
+  "severity" : "critical"
+}, {
+  "uid" : "2f01e67982ea9954",
+  "name" : "Check Calendar button",
+  "time" : {
+    "start" : 1746634865681,
+    "stop" : 1746634872490,
+    "duration" : 6809
+  },
+  "status" : "passed",
+  "severity" : "critical"
+}, {
+  "uid" : "3d97b2712563fa42",
+  "name" : "Forgot password link",
+  "time" : {
+    "start" : 1746634764609,
+    "stop" : 1746634770095,
+    "duration" : 5486
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "dbd5480cd4782f5d",
+  "name" : "Check Gameplan button",
+  "time" : {
+    "start" : 1746634856254,
+    "stop" : 1746634860261,
+    "duration" : 4007
+  },
+  "status" : "passed",
+  "severity" : "critical"
+}, {
+  "uid" : "56aecfd8d2d91c07",
+  "name" : "Check Testimonials button",
+  "time" : {
+    "start" : 1746634832763,
+    "stop" : 1746634836824,
+    "duration" : 4061
+  },
+  "status" : "passed",
+  "severity" : "critical"
+}, {
+  "uid" : "3c64902f55551e5d",
+  "name" : "Check Guidelines button",
+  "time" : {
+    "start" : 1746634860267,
+    "stop" : 1746634865675,
+    "duration" : 5408
+  },
+  "status" : "passed",
+  "severity" : "critical"
+}, {
+  "uid" : "38174700e56f0947",
+  "name" : "Successful login with valid credentials",
+  "time" : {
+    "start" : 1746634748912,
+    "stop" : 1746634756137,
+    "duration" : 7225
+  },
+  "status" : "passed",
+  "severity" : "critical"
+}, {
+  "uid" : "bad4c34b4581e442",
+  "name" : "Check Coach Directory button",
+  "time" : {
+    "start" : 1746634883294,
+    "stop" : 1746634889318,
+    "duration" : 6024
+  },
+  "status" : "passed",
+  "severity" : "critical"
+}, {
+  "uid" : "92e9ee47faddceed",
+  "name" : "Check Our Team button",
+  "time" : {
+    "start" : 1746634844332,
+    "stop" : 1746634847490,
+    "duration" : 3158
+  },
+  "status" : "passed",
+  "severity" : "critical"
+}, {
+  "uid" : "413f0027188d42e0",
+  "name" : "Check My Profile button",
+  "time" : {
+    "start" : 1746634877196,
+    "stop" : 1746634883290,
+    "duration" : 6094
+  },
+  "status" : "passed",
+  "severity" : "critical"
+}, {
+  "uid" : "9a73018768b57080",
+  "name" : "Unsuccessful login with invalid credentials",
+  "time" : {
+    "start" : 1746634759274,
+    "stop" : 1746634762018,
+    "duration" : 2744
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "ae6605b4eafd861a",
+  "name" : "Check Get Verified button",
+  "time" : {
+    "start" : 1746634918265,
+    "stop" : 1746634922732,
+    "duration" : 4467
+  },
+  "status" : "passed",
+  "severity" : "critical"
+}, {
+  "uid" : "78c1c25b970c697c",
+  "name" : "Validation empty login or password fields",
+  "time" : {
+    "start" : 1746634763235,
+    "stop" : 1746634764601,
+    "duration" : 1366
+  },
+  "status" : "passed",
+  "severity" : "minor"
+}, {
+  "uid" : "5c6ab4f584556af1",
+  "name" : "Check Sign Up link button",
+  "time" : {
+    "start" : 1746634770104,
+    "stop" : 1746634772340,
+    "duration" : 2236
+  },
+  "status" : "passed",
+  "severity" : "critical"
+}, {
+  "uid" : "cfdc8c5d3de8055c",
+  "name" : "Check F.A.C. button",
+  "time" : {
+    "start" : 1746634836833,
+    "stop" : 1746634840025,
+    "duration" : 3192
+  },
+  "status" : "passed",
+  "severity" : "critical"
+}, {
+  "uid" : "e3ee8ba1dedde6e2",
+  "name" : "Check Player Directory button",
+  "time" : {
+    "start" : 1746634872495,
+    "stop" : 1746634877192,
+    "duration" : 4697
+  },
+  "status" : "passed",
+  "severity" : "critical"
+}, {
+  "uid" : "8021440394adb012",
+  "name" : "Check Film To Field button",
+  "time" : {
+    "start" : 1746634901536,
+    "stop" : 1746634907628,
+    "duration" : 6092
+  },
+  "status" : "passed",
+  "severity" : "critical"
+}, {
+  "uid" : "3a991e96b0d86ad9",
+  "name" : "Check Background button",
+  "time" : {
+    "start" : 1746634829221,
+    "stop" : 1746634832752,
+    "duration" : 3531
+  },
+  "status" : "passed",
+  "severity" : "critical"
+}, {
+  "uid" : "af9a9ff7cc6422fa",
+  "name" : "Check What We Do button",
+  "time" : {
+    "start" : 1746634826197,
+    "stop" : 1746634829211,
+    "duration" : 3014
+  },
+  "status" : "passed",
+  "severity" : "critical"
+}, {
+  "uid" : "ccaac39f04401a61",
+  "name" : "Check Study Guide button",
+  "time" : {
+    "start" : 1746634889326,
+    "stop" : 1746634895006,
+    "duration" : 5680
+  },
+  "status" : "passed",
+  "severity" : "critical"
+}, {
+  "uid" : "af7cfb52d7672fa6",
+  "name" : "Check Classroom button",
+  "time" : {
+    "start" : 1746634895011,
+    "stop" : 1746634901529,
+    "duration" : 6518
+  },
+  "status" : "passed",
+  "severity" : "critical"
+}, {
+  "uid" : "134871543c2a9106",
+  "name" : "Check Grades button",
+  "time" : {
+    "start" : 1746634852031,
+    "stop" : 1746634856249,
+    "duration" : 4218
+  },
+  "status" : "passed",
+  "severity" : "critical"
+}, {
+  "uid" : "983c2dede302e5b0",
+  "name" : "Check Login button",
+  "time" : {
+    "start" : 1746634914477,
+    "stop" : 1746634918260,
+    "duration" : 3783
+  },
+  "status" : "passed",
+  "severity" : "critical"
+}, {
+  "uid" : "3df1c0924a828bf",
+  "name" : "Check Home button",
+  "time" : {
+    "start" : 1746634823287,
+    "stop" : 1746634826185,
+    "duration" : 2898
+  },
+  "status" : "passed",
+  "severity" : "critical"
+}, {
+  "uid" : "920ee8222bac9c92",
+  "name" : "Check Scholarships button",
+  "time" : {
+    "start" : 1746634847497,
+    "stop" : 1746634852024,
+    "duration" : 4527
+  },
+  "status" : "passed",
+  "severity" : "critical"
+}, {
+  "uid" : "e65e4210453f8b07",
+  "name" : "Check Settings button",
+  "time" : {
+    "start" : 1746634907633,
+    "stop" : 1746634914471,
+    "duration" : 6838
+  },
+  "status" : "passed",
+  "severity" : "critical"
+} ]

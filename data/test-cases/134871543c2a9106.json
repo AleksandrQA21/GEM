@@ -1,0 +1,210 @@
+{
+  "uid" : "134871543c2a9106",
+  "name" : "Check Grades button",
+  "fullName" : "src/test/resources/features/menu.feature:77",
+  "historyId" : "bb57361bde53d9f10f9742a0777b15b4",
+  "time" : {
+    "start" : 1746634852031,
+    "stop" : 1746634856249,
+    "duration" : 4218
+  },
+  "description" : "  As a User\n  I want to be able to see clickable SideMenu button\n  So that I can access to menu options",
+  "descriptionHtml" : "<p>As a User\nI want to be able to see clickable SideMenu button\nSo that I can access to menu options</p>\n",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ {
+    "name" : "steps.MenuSteps.setUp()",
+    "time" : {
+      "start" : 1746634852031,
+      "stop" : 1746634852032,
+      "duration" : 1
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "steps.LoginSteps.setUp()",
+    "time" : {
+      "start" : 1746634852032,
+      "stop" : 1746634852032,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  } ],
+  "testStage" : {
+    "description" : "  As a User\n  I want to be able to see clickable SideMenu button\n  So that I can access to menu options",
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "Given I open G.E.M. Class Recruiting website as a guest",
+      "time" : {
+        "start" : 1746634852033,
+        "stop" : 1746634853258,
+        "duration" : 1225
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "When I click on Menu button",
+      "time" : {
+        "start" : 1746634853258,
+        "stop" : 1746634853347,
+        "duration" : 89
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "And I click on Recruiting button",
+      "time" : {
+        "start" : 1746634853348,
+        "stop" : 1746634854777,
+        "duration" : 1429
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "And I click on Grades button",
+      "time" : {
+        "start" : 1746634854777,
+        "stop" : 1746634855386,
+        "duration" : 609
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "Then I should see Grades section on Need To Know page",
+      "time" : {
+        "start" : 1746634855386,
+        "stop" : 1746634856230,
+        "duration" : 844
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 5,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true
+  },
+  "afterStages" : [ {
+    "name" : "steps.CookieCleanupHooks.cleanupBrowserData()",
+    "time" : {
+      "start" : 1746634856230,
+      "stop" : 1746634856248,
+      "duration" : 18
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  } ],
+  "labels" : [ {
+    "name" : "tag",
+    "value" : "feature=MenuFeature"
+  }, {
+    "name" : "severity",
+    "value" : "critical"
+  }, {
+    "name" : "tag",
+    "value" : "story=CheckSideMenuButtonOptions"
+  }, {
+    "name" : "tag",
+    "value" : "regression"
+  }, {
+    "name" : "tag",
+    "value" : "smoke"
+  }, {
+    "name" : "host",
+    "value" : "fv-az1660-752"
+  }, {
+    "name" : "thread",
+    "value" : "3517@fv-az1660-752.main(1)"
+  }, {
+    "name" : "feature",
+    "value" : "Frontend Menu Functionality"
+  }, {
+    "name" : "story",
+    "value" : "Check Grades button"
+  }, {
+    "name" : "suite",
+    "value" : "Frontend Menu Functionality"
+  }, {
+    "name" : "testClass",
+    "value" : "Check Grades button"
+  }, {
+    "name" : "framework",
+    "value" : "cucumber4jvm"
+  }, {
+    "name" : "language",
+    "value" : "java"
+  }, {
+    "name" : "gherkin_uri",
+    "value" : "file:///home/runner/work/GEM/GEM/src/test/resources/features/menu.feature"
+  }, {
+    "name" : "package",
+    "value" : "src.test.resources.features.menu_feature.Frontend Menu Functionality"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "critical",
+    "retries" : [ ],
+    "categories" : [ ],
+    "tags" : [ "story=CheckSideMenuButtonOptions", "regression", "feature=MenuFeature", "smoke" ]
+  },
+  "source" : "134871543c2a9106.json",
+  "parameterValues" : [ ]
+}

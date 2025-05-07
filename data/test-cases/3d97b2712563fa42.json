@@ -1,0 +1,270 @@
+{
+  "uid" : "3d97b2712563fa42",
+  "name" : "Forgot password link",
+  "fullName" : "src/test/resources/features/login.feature:45",
+  "historyId" : "6b26d907a0b4f18bea12aeda36f978b6",
+  "time" : {
+    "start" : 1746634764609,
+    "stop" : 1746634770095,
+    "duration" : 5486
+  },
+  "description" : "  As a Student\n  I want to be able to login to the G.E.M. Class Recruiting website\n  So that I can access my account",
+  "descriptionHtml" : "<p>As a Student\nI want to be able to login to the G.E.M. Class Recruiting website\nSo that I can access my account</p>\n",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ {
+    "name" : "steps.MenuSteps.setUp()",
+    "time" : {
+      "start" : 1746634764610,
+      "stop" : 1746634764610,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "steps.LoginSteps.setUp()",
+    "time" : {
+      "start" : 1746634764613,
+      "stop" : 1746634764613,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  } ],
+  "testStage" : {
+    "description" : "  As a Student\n  I want to be able to login to the G.E.M. Class Recruiting website\n  So that I can access my account",
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "Given I am on the login page",
+      "time" : {
+        "start" : 1746634764614,
+        "stop" : 1746634765652,
+        "duration" : 1038
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "When I click on Forgot Password link",
+      "time" : {
+        "start" : 1746634765653,
+        "stop" : 1746634766242,
+        "duration" : 589
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "Then I should see Recover Password page",
+      "time" : {
+        "start" : 1746634766243,
+        "stop" : 1746634766581,
+        "duration" : 338
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "And I enter valid email \"aleksandr.titovskoy+3@greenice.net\"",
+      "time" : {
+        "start" : 1746634766581,
+        "stop" : 1746634766695,
+        "duration" : 114
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "And I click Reset button",
+      "time" : {
+        "start" : 1746634766695,
+        "stop" : 1746634766774,
+        "duration" : 79
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "Then I should see Reset Password link sent",
+      "time" : {
+        "start" : 1746634766774,
+        "stop" : 1746634769433,
+        "duration" : 2659
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "And email input field is empty",
+      "time" : {
+        "start" : 1746634769433,
+        "stop" : 1746634769455,
+        "duration" : 22
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "And I click on Back to Sign in button",
+      "time" : {
+        "start" : 1746634769455,
+        "stop" : 1746634770052,
+        "duration" : 597
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "Then I should remain on the login page",
+      "time" : {
+        "start" : 1746634770052,
+        "stop" : 1746634770072,
+        "duration" : 20
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 9,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true
+  },
+  "afterStages" : [ {
+    "name" : "steps.CookieCleanupHooks.cleanupBrowserData()",
+    "time" : {
+      "start" : 1746634770073,
+      "stop" : 1746634770094,
+      "duration" : 21
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  } ],
+  "labels" : [ {
+    "name" : "tag",
+    "value" : "epic=Authentication"
+  }, {
+    "name" : "tag",
+    "value" : "feature=LoginFeature"
+  }, {
+    "name" : "severity",
+    "value" : "normal"
+  }, {
+    "name" : "tag",
+    "value" : "story=ForgotPassword"
+  }, {
+    "name" : "tag",
+    "value" : "regression"
+  }, {
+    "name" : "host",
+    "value" : "fv-az1755-753"
+  }, {
+    "name" : "thread",
+    "value" : "3481@fv-az1755-753.main(1)"
+  }, {
+    "name" : "feature",
+    "value" : "Login Functionality"
+  }, {
+    "name" : "story",
+    "value" : "Forgot password link"
+  }, {
+    "name" : "suite",
+    "value" : "Login Functionality"
+  }, {
+    "name" : "testClass",
+    "value" : "Forgot password link"
+  }, {
+    "name" : "framework",
+    "value" : "cucumber4jvm"
+  }, {
+    "name" : "language",
+    "value" : "java"
+  }, {
+    "name" : "gherkin_uri",
+    "value" : "file:///home/runner/work/GEM/GEM/src/test/resources/features/login.feature"
+  }, {
+    "name" : "package",
+    "value" : "src.test.resources.features.login_feature.Login Functionality"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "tags" : [ "regression", "epic=Authentication", "feature=LoginFeature", "story=ForgotPassword" ]
+  },
+  "source" : "3d97b2712563fa42.json",
+  "parameterValues" : [ ]
+}

@@ -1,0 +1,210 @@
+{
+  "uid" : "e65e4210453f8b07",
+  "name" : "Check Settings button",
+  "fullName" : "src/test/resources/features/menu.feature:157",
+  "historyId" : "422b886b001f800577ca086a85dff4d5",
+  "time" : {
+    "start" : 1746634907633,
+    "stop" : 1746634914471,
+    "duration" : 6838
+  },
+  "description" : "  As a User\n  I want to be able to see clickable SideMenu button\n  So that I can access to menu options",
+  "descriptionHtml" : "<p>As a User\nI want to be able to see clickable SideMenu button\nSo that I can access to menu options</p>\n",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ {
+    "name" : "steps.MenuSteps.setUp()",
+    "time" : {
+      "start" : 1746634907633,
+      "stop" : 1746634907633,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "steps.LoginSteps.setUp()",
+    "time" : {
+      "start" : 1746634907633,
+      "stop" : 1746634907634,
+      "duration" : 1
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  } ],
+  "testStage" : {
+    "description" : "  As a User\n  I want to be able to see clickable SideMenu button\n  So that I can access to menu options",
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "Given I open G.E.M. Class Recruiting website as a guest",
+      "time" : {
+        "start" : 1746634907635,
+        "stop" : 1746634908955,
+        "duration" : 1320
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "When I click on Menu button",
+      "time" : {
+        "start" : 1746634908955,
+        "stop" : 1746634909060,
+        "duration" : 105
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "And I click on Athletes button",
+      "time" : {
+        "start" : 1746634909060,
+        "stop" : 1746634910696,
+        "duration" : 1636
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "And I click on Settings button",
+      "time" : {
+        "start" : 1746634910696,
+        "stop" : 1746634911796,
+        "duration" : 1100
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "Then I should see Membership agreement page",
+      "time" : {
+        "start" : 1746634911796,
+        "stop" : 1746634914455,
+        "duration" : 2659
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 5,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true
+  },
+  "afterStages" : [ {
+    "name" : "steps.CookieCleanupHooks.cleanupBrowserData()",
+    "time" : {
+      "start" : 1746634914455,
+      "stop" : 1746634914470,
+      "duration" : 15
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  } ],
+  "labels" : [ {
+    "name" : "tag",
+    "value" : "feature=MenuFeature"
+  }, {
+    "name" : "severity",
+    "value" : "critical"
+  }, {
+    "name" : "tag",
+    "value" : "story=CheckSideMenuButtonOptions"
+  }, {
+    "name" : "tag",
+    "value" : "regression"
+  }, {
+    "name" : "tag",
+    "value" : "smoke"
+  }, {
+    "name" : "host",
+    "value" : "fv-az1660-752"
+  }, {
+    "name" : "thread",
+    "value" : "3517@fv-az1660-752.main(1)"
+  }, {
+    "name" : "feature",
+    "value" : "Frontend Menu Functionality"
+  }, {
+    "name" : "story",
+    "value" : "Check Settings button"
+  }, {
+    "name" : "suite",
+    "value" : "Frontend Menu Functionality"
+  }, {
+    "name" : "testClass",
+    "value" : "Check Settings button"
+  }, {
+    "name" : "framework",
+    "value" : "cucumber4jvm"
+  }, {
+    "name" : "language",
+    "value" : "java"
+  }, {
+    "name" : "gherkin_uri",
+    "value" : "file:///home/runner/work/GEM/GEM/src/test/resources/features/menu.feature"
+  }, {
+    "name" : "package",
+    "value" : "src.test.resources.features.menu_feature.Frontend Menu Functionality"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "critical",
+    "retries" : [ ],
+    "categories" : [ ],
+    "tags" : [ "story=CheckSideMenuButtonOptions", "regression", "feature=MenuFeature", "smoke" ]
+  },
+  "source" : "e65e4210453f8b07.json",
+  "parameterValues" : [ ]
+}
