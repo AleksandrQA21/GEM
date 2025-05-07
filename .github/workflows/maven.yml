@@ -239,7 +239,6 @@ jobs:
           - feature: MenuFeature
             display-name: "Menu Tests"
       fail-fast: false
-      # Ограничение одновременных заданий для избежания конфликтов
       max-parallel: 1
     
     name: ${{ matrix.display-name }}
@@ -290,32 +289,30 @@ jobs:
           TAGS="${TAGS//\"/\\\"}"
           mvn clean test -Dselenide.headless=true -Dcucumber.filter.tags="$TAGS"
 
-      - name: Generate Allure Report for ${{ matrix.feature }}
-        uses: simple-elf/allure-report-action@master
+      # Сохраняем результаты тестов в хранилище GitHub Pages напрямую
+      # Вместо использования artifacts
+      - name: Save test results to GitHub Pages
         if: always()
-        with:
-          allure_results: target/allure-results
-          allure_report: allure-report-${{ matrix.feature }}
-          allure_history: allure-history/${{ matrix.feature }}
-          keep_reports: 20
-
-
-      # Используем conditional artifacting для уменьшения вероятности ошибки
-      - name: Upload Artifacts for Login Tests
-        uses: actions/upload-artifact@v2
-        if: matrix.feature == 'LoginFeature'
-        with:
-          name: allure-report-login
-          path: allure-report-${{ matrix.feature }}
-          retention-days: 14
+        run: |
+          mkdir -p allure-history/${{ matrix.feature }}
           
-      - name: Upload Artifacts for Menu Tests
-        uses: actions/upload-artifact@v2
-        if: matrix.feature == 'MenuFeature'
+          # Создаем отчет Allure напрямую с помощью allure command line
+          echo "Формирование отчета Allure для ${{ matrix.feature }}"
+          
+          # Генерируем временный отчет для текущих результатов
+          mkdir -p temp-report
+          
+          # Сохраняем результаты тестов в директорию результатов
+          echo "Сохранение результатов тестов для ${{ matrix.feature }}"
+          mkdir -p test-results/${{ matrix.feature }}
+          cp -r target/allure-results/* test-results/${{ matrix.feature }}/ || true
+          
+      # Сохраняем данные в кэше GitHub Actions вместо артефактов
+      - name: Cache test results
+        uses: actions/cache@v3
         with:
-          name: allure-report-menu
-          path: allure-report-${{ matrix.feature }}
-          retention-days: 14
+          path: test-results
+          key: test-results-${{ matrix.feature }}-${{ github.run_id }}
 
   merge-reports:
     needs: test-parallel
@@ -324,20 +321,22 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       
-      # Измененное имя артефактов
-      - name: Download login test artifacts
-        uses: actions/download-artifact@v2
+      # Используем кэш вместо артефактов
+      - name: Restore cached test results
+        uses: actions/cache@v3
         with:
-          name: allure-report-login
-          path: allure-reports/login
-        continue-on-error: true
-        
-      - name: Download menu test artifacts
-        uses: actions/download-artifact@v2
+          path: test-results
+          key: test-results-LoginFeature-${{ github.run_id }}
+          restore-keys: |
+            test-results-LoginFeature-
+
+      - name: Restore Menu test results
+        uses: actions/cache@v3
         with:
-          name: allure-report-menu
-          path: allure-reports/menu
-        continue-on-error: true
+          path: test-results
+          key: test-results-MenuFeature-${{ github.run_id }}
+          restore-keys: |
+            test-results-MenuFeature-
       
       - name: Get Allure history
         uses: actions/checkout@v3
@@ -347,25 +346,32 @@ jobs:
           ref: gh-pages
           path: gh-pages
       
-      # Создаем директорию для результатов
+      # Создаем директорию для результатов и копируем из кэша
       - name: Prepare results directory
         run: |
           mkdir -p combined-results
           echo "Copying test results to combined directory"
-          cp -r allure-reports/*/* combined-results/ || true
+          find test-results -type f -exec cp {} combined-results/ \; || true
+          ls -la combined-results/ || true
       
-      - name: Generate combined Allure Report
-        uses: simple-elf/allure-report-action@master
-        if: always()
-        with:
-          allure_results: combined-results
-          allure_history: allure-history
-          keep_reports: 20
+      # Устанавливаем Allure CLI для обработки отчетов
+      - name: Install Allure CLI
+        run: |
+          curl -o allure-2.13.8.tgz -Ls https://repo.maven.apache.org/maven2/io/qameta/allure/allure-commandline/2.13.8/allure-commandline-2.13.8.tgz
+          tar -zxvf allure-2.13.8.tgz -C .
+          ./allure-2.13.8/bin/allure --version
       
-      - name: Deploy report to GitHub Pages
-        if: always()
+      # Генерируем отчет с помощью CLI
+      - name: Generate Allure report
+        run: |
+          mkdir -p allure-report
+          ./allure-2.13.8/bin/allure generate combined-results -o allure-report --clean
+      
+      # Публикуем отчет
+      - name: Publish to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
+        if: always()
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_branch: gh-pages
-          publish_dir: ./allure-history
+          publish_dir: ./allure-report
