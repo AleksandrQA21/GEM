@@ -1,0 +1,22 @@
+"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
+"  As a Student
+  I want to be able to login to the G.E.M. Class Recruiting website
+  So that I can access my account","5264","Forgot password link","","Wed May 07 16:47:37 GMT 2025","passed","Wed May 07 16:47:42 GMT 2025","","Login Functionality","Forgot password link",""
+"  As a Student
+  I want to be able to login to the G.E.M. Class Recruiting website
+  So that I can access my account","1298","Validation empty login or password fields","","Wed May 07 16:47:36 GMT 2025","passed","Wed May 07 16:47:37 GMT 2025","","Login Functionality","Validation empty login or password fields",""
+"  As a Student
+  I want to be able to login to the G.E.M. Class Recruiting website
+  So that I can access my account","1300","Validation empty login or password fields","","Wed May 07 16:47:35 GMT 2025","passed","Wed May 07 16:47:36 GMT 2025","","Login Functionality","Validation empty login or password fields",""
+"  As a Student
+  I want to be able to login to the G.E.M. Class Recruiting website
+  So that I can access my account","2311","Check Sign Up link button","","Wed May 07 16:47:42 GMT 2025","passed","Wed May 07 16:47:45 GMT 2025","","Login Functionality","Check Sign Up link button",""
+"  As a Student
+  I want to be able to login to the G.E.M. Class Recruiting website
+  So that I can access my account","3336","Unsuccessful login with invalid credentials","","Wed May 07 16:47:31 GMT 2025","passed","Wed May 07 16:47:35 GMT 2025","","Login Functionality","Unsuccessful login with invalid credentials",""
+"  As a Student
+  I want to be able to login to the G.E.M. Class Recruiting website
+  So that I can access my account","5974","Successful login with valid credentials","","Wed May 07 16:47:22 GMT 2025","passed","Wed May 07 16:47:28 GMT 2025","","Login Functionality","Successful login with valid credentials",""
+"  As a Student
+  I want to be able to login to the G.E.M. Class Recruiting website
+  So that I can access my account","3008","Unsuccessful login with invalid credentials","","Wed May 07 16:47:28 GMT 2025","passed","Wed May 07 16:47:31 GMT 2025","","Login Functionality","Unsuccessful login with invalid credentials",""
