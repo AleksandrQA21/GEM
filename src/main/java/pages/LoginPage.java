@@ -17,6 +17,7 @@ public class LoginPage extends BasePage {
     public static SelenideElement signUpLink = $x("//a[contains(text(),'Sign Up')]");
     public static SelenideElement forgotPasswordLink = $x("//a[contains(text(),'Forgot Password?')]");
     public static SelenideElement errorMessage = $("p.text-danger");
+    public static SelenideElement errorMessage2 = $("p.text-danger");
 
 
     public void openLoginPage() {
