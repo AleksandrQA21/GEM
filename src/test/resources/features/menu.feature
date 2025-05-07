@@ -152,3 +152,11 @@ Feature: Frontend Menu Functionality
     And I click on Athletes button
     And I click on Film To field button
     Then I should see Film To Field page
+
+  @severity=critical @story=CheckSideMenuButtonOptions @regression @smoke
+  Scenario: Check Settings button
+    Given I open G.E.M. Class Recruiting website as a guest
+    When I click on Menu button
+    And I click on Athletes button
+    And I click on Settings button
+    Then I should see Membership agreement page

@@ -1,9 +1,8 @@
 package steps;
 
+import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.Selenide;
-import com.codeborne.selenide.WebDriverRunner;
 import components.HamburgerMenu;
-import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
@@ -13,11 +12,17 @@ import io.qameta.allure.Step;
 import org.testng.Assert;
 import pages.*;
 
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+
+import static com.codeborne.selenide.CollectionCondition.size;
 import static com.codeborne.selenide.Condition.*;
-import static com.codeborne.selenide.Selenide.webdriver;
-import static com.codeborne.selenide.Selenide.open;
 import static com.codeborne.selenide.CollectionCondition.sizeGreaterThan;
+import static com.codeborne.selenide.Selenide.*;
 import static pages.FilmToFieldPage.getStartedFilmToFieldButton;
+import static pages.MembershipAgreementPage.expectedParagraphs;
 
 /**
  * Step definitions for Menu button
@@ -303,9 +308,9 @@ public class MenuSteps {
         Assert.assertEquals(currentUrl, NeedToKnowPage.GAMEPLAN_URL,
                 "Not redirected to Gameplan page");
         NeedToKnowPage.gameplanTitle.scrollTo().shouldBe(visible);
-        // Проверка, что список элементов содержимого существует и не пуст
+        // Check that the list of content elements exists and is not empty
         NeedToKnowPage.gameplanContentItems.shouldHave(sizeGreaterThan(0));
-        // Проверка видимости каждого элемента с JavaScript прокруткой
+        // Check visibility of each element with JavaScript scrolling
         for (int i = 0; i < 5; i++) {
             NeedToKnowPage.gameplanContentItems.get(i).shouldBe(visible);
         }
@@ -325,9 +330,9 @@ public class MenuSteps {
                 "Not redirected to Guidelines page");
         NeedToKnowPage.guidelinesTitle.scrollTo().shouldBe(visible);
         NeedToKnowPage.guidelinesContent.shouldBe(visible);
-        // Проверка, что все ссылки в разделе существуют и отображаются
+        // Check that all links in the section exist and are displayed
         NeedToKnowPage.guidelinesLinks.shouldHave(sizeGreaterThan(0));
-        // Проверка видимости всех ссылок
+        // Check visibility of all links
         for (int i = 0; i < NeedToKnowPage.guidelinesLinks.size(); i++) {
             NeedToKnowPage.guidelinesLinks.get(i).scrollTo().shouldBe(visible).shouldBe(clickable);
         }
@@ -347,9 +352,9 @@ public class MenuSteps {
                 "Not redirected to Calendar page");
         NeedToKnowPage.calendarTitle.scrollTo().shouldBe(visible);
         NeedToKnowPage.calendarContent.shouldBe(visible);
-        // Проверка, что все ссылки в разделе существуют и отображаются
+        // Check that all links in the section exist and are displayed
         NeedToKnowPage.calendarLinks.shouldHave(sizeGreaterThan(0));
-        // Проверка видимости всех ссылок
+        // Check visibility of all links
         for (int i = 0; i < NeedToKnowPage.calendarLinks.size(); i++) {
             NeedToKnowPage.calendarLinks.get(i).scrollTo().shouldBe(visible).shouldBe(clickable);
         }
@@ -423,7 +428,7 @@ public class MenuSteps {
 
     @Then("I should see Coach Directory page")
     @Step("Verifying Coach Directory page")
-    public void iShouldSeeCoachDirectoryPage() throws InterruptedException {
+    public void iShouldSeeCoachDirectoryPage() {
         String currentUrl = webdriver().driver().url();
         Assert.assertEquals(currentUrl, CoachDirectoryPage.COACH_DIRECTORY_URL,
                 "Not redirected to Coach Directory page");
@@ -485,5 +490,51 @@ public class MenuSteps {
         String currentUrlAfterClick = webdriver().driver().url();
         Assert.assertEquals(currentUrlAfterClick, FilmToFieldPage.FILM_TO_FIELD_COM_URL,
                 "Not redirected to filmtofield.com");
+    }
+
+    @And("I click on Settings button")
+    @Step("Clicking on Settings button")
+    public void iClickOnSettingsButton() {
+        hamburgerMenu.clickSettings();
+    }
+
+    @Then("I should see Membership agreement page")
+    @Step("Verifying Membership agreement page")
+    public void iShouldSeeMembershipAgreementPage() {
+        String currentUrl = webdriver().driver().url();
+        Assert.assertEquals(currentUrl, MembershipAgreementPage.MEMBERSHIP_AGREEMENT_URL,
+                "Not redirected to Membership Agreement page");
+        MembershipAgreementPage.membershipAgreementTitle.shouldBe(visible);
+
+        // Get collection of all paragraphs
+        ElementsCollection paragraphs = MembershipAgreementPage.whiteParagraphs;
+        // Check number of paragraphs
+        paragraphs.shouldHave(size(expectedParagraphs.size()));
+        // Get paragraph texts by scrolling to each one before reading
+        List<String> actualTexts = new ArrayList<>();
+        for (int i = 0; i < paragraphs.size(); i++) {
+            // Scroll to element before reading text
+            paragraphs.get(i).scrollIntoView(true);
+            // Add a small pause for test stability
+            Selenide.sleep(100);
+            // Get element text
+            actualTexts.add(paragraphs.get(i).getText());
+            // Output first 50 characters of text for debugging
+            System.out.println("Paragraph " + i + ": " + 
+                    paragraphs.get(i).getText().substring(0, Math.min(50, paragraphs.get(i).getText().length())) + "...");
+        }
+        // Check uniqueness of all paragraphs
+        Set<String> uniqueTexts = new HashSet<>(actualTexts);
+        Assert.assertEquals(uniqueTexts.size(), actualTexts.size(), 
+                "All paragraphs should contain unique text");
+        // Check content of each paragraph
+        for (int i = 0; i < expectedParagraphs.size(); i++) {
+            MembershipAgreementPage.ParagraphInfo expected = expectedParagraphs.get(i);
+            String actual = actualTexts.get(i);
+            
+            Assert.assertTrue(actual.contains(expected.keyPhrase), 
+                    String.format("Paragraph '%s' should contain key phrase '%s'", 
+                            expected.title, expected.keyPhrase));
+        }
     }
 }
