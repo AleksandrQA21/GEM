@@ -239,6 +239,8 @@ jobs:
           - feature: MenuFeature
             display-name: "Menu Tests"
       fail-fast: false
+      # Ограничение одновременных заданий для избежания конфликтов
+      max-parallel: 1
     
     name: ${{ matrix.display-name }}
     steps:
@@ -274,15 +276,8 @@ jobs:
       - name: Prepare test tags
         id: prepare-tags
         run: |
-          BASE_TAGS="${{ needs.determine-test-matrix.outputs.test_tags }}"
-          FEATURE_TAG="@feature=${{ matrix.feature }}"
-          
-          if [[ -n "$BASE_TAGS" ]]; then
-            FINAL_TAGS="$BASE_TAGS and $FEATURE_TAG"
-          else
-            FINAL_TAGS="$FEATURE_TAG"
-          fi
-          
+          # Простой подход - используем только тег feature
+          FINAL_TAGS="@feature=${{ matrix.feature }}"
           echo "final_tags=$FINAL_TAGS" >> $GITHUB_ENV
           echo "Итоговые теги для запуска: $FINAL_TAGS"
 
@@ -305,11 +300,20 @@ jobs:
           keep_reports: 20
 
 
-      - name: Upload Artifacts
+      # Используем conditional artifacting для уменьшения вероятности ошибки
+      - name: Upload Artifacts for Login Tests
         uses: actions/upload-artifact@v2
-        if: always()
+        if: matrix.feature == 'LoginFeature'
         with:
-          name: allure-report-${{ matrix.feature }}
+          name: allure-report-login
+          path: allure-report-${{ matrix.feature }}
+          retention-days: 14
+          
+      - name: Upload Artifacts for Menu Tests
+        uses: actions/upload-artifact@v2
+        if: matrix.feature == 'MenuFeature'
+        with:
+          name: allure-report-menu
           path: allure-report-${{ matrix.feature }}
           retention-days: 14
 
@@ -320,10 +324,20 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       
-      - name: Download all artifacts
+      # Измененное имя артефактов
+      - name: Download login test artifacts
         uses: actions/download-artifact@v2
         with:
-          path: allure-reports
+          name: allure-report-login
+          path: allure-reports/login
+        continue-on-error: true
+        
+      - name: Download menu test artifacts
+        uses: actions/download-artifact@v2
+        with:
+          name: allure-report-menu
+          path: allure-reports/menu
+        continue-on-error: true
       
       - name: Get Allure history
         uses: actions/checkout@v3
@@ -333,14 +347,20 @@ jobs:
           ref: gh-pages
           path: gh-pages
       
+      # Создаем директорию для результатов
+      - name: Prepare results directory
+        run: |
+          mkdir -p combined-results
+          echo "Copying test results to combined directory"
+          cp -r allure-reports/*/* combined-results/ || true
+      
       - name: Generate combined Allure Report
         uses: simple-elf/allure-report-action@master
         if: always()
         with:
-          allure_results: allure-reports
+          allure_results: combined-results
           allure_history: allure-history
           keep_reports: 20
-
       
       - name: Deploy report to GitHub Pages
         if: always()
