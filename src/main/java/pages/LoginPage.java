@@ -9,7 +9,7 @@ import static com.codeborne.selenide.Selenide.*;
 
 public class LoginPage extends BasePage {
 
-    public static final String LOGIN_URL = "/login";
+    public static final String LOGIN_URL = "http://34.233.163.207/login";
     public static SelenideElement emailInput = $("input[name='email']");
     public static SelenideElement passwordInput = $("input[name='password']");
     public static SelenideElement loginButton = $("button.sec-btn");
@@ -20,7 +20,7 @@ public class LoginPage extends BasePage {
 
 
     public void openLoginPage() {
-        openBasePage(BASE_URL + LOGIN_URL);
+        open(LOGIN_URL);
         loginHeading.shouldBe(Condition.visible);
     }
 

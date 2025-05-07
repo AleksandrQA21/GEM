@@ -160,3 +160,17 @@ Feature: Frontend Menu Functionality
     And I click on Athletes button
     And I click on Settings button
     Then I should see Membership agreement page
+
+  @severity=critical @story=CheckSideMenuButtonOptions @regression @smoke
+  Scenario: Check Login button
+    Given I open G.E.M. Class Recruiting website as a guest
+    When I click on Menu button
+    And I click on Login button
+    Then I should see Login page
+
+  @severity=critical @story=CheckSideMenuButtonOptions @regression @smoke
+  Scenario: Check Get Verified button
+    Given I open G.E.M. Class Recruiting website as a guest
+    When I click on Menu button
+    And I click on Get Verified button
+    Then I should see Get Verified page

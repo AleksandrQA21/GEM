@@ -537,4 +537,24 @@ public class MenuSteps {
                             expected.title, expected.keyPhrase));
         }
     }
+
+    @And("I click on Get Verified button")
+    @Step("Clicking on Get Verified button")
+    public void iClickOnGetVerifiedButton() {
+        hamburgerMenu.clickGetVerified();
+    }
+
+    @And("I click on Login button")
+    @Step("Clicking on Login button")
+    public void iClickOnLoginButton() {
+        hamburgerMenu.clickLogin();
+    }
+
+    @Then("I should see Login page")
+    @Step("Verifying redirect to Login Page")
+    public void iShouldSeeLoginPage() {
+        String currentUrl = webdriver().driver().url();
+        Assert.assertEquals(currentUrl, LoginPage.LOGIN_URL,
+                "Not redirected to Login page");
+    }
 }
