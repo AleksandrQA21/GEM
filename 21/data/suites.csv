@@ -1,0 +1,88 @@
+"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
+"  As a User
+  I want to be able to see clickable SideMenu button
+  So that I can access to menu options","3543","Check Background button","","Wed May 07 16:58:31 GMT 2025","passed","Wed May 07 16:58:34 GMT 2025","","Frontend Menu Functionality","Check Background button",""
+"  As a Student
+  I want to be able to login to the G.E.M. Class Recruiting website
+  So that I can access my account","1246","Validation empty login or password fields","","Wed May 07 16:58:09 GMT 2025","passed","Wed May 07 16:58:11 GMT 2025","","Login Functionality","Validation empty login or password fields",""
+"  As a User
+  I want to be able to see clickable SideMenu button
+  So that I can access to menu options","3026","Check F.A.C. button","","Wed May 07 16:58:40 GMT 2025","passed","Wed May 07 16:58:43 GMT 2025","","Frontend Menu Functionality","Check F.A.C. button",""
+"  As a User
+  I want to be able to see clickable SideMenu button
+  So that I can access to menu options","3025","Check Our Team button","","Wed May 07 16:58:48 GMT 2025","passed","Wed May 07 16:58:51 GMT 2025","","Frontend Menu Functionality","Check Our Team button",""
+"  As a User
+  I want to be able to see clickable SideMenu button
+  So that I can access to menu options","2833","Check Home button","","Wed May 07 16:58:25 GMT 2025","passed","Wed May 07 16:58:28 GMT 2025","","Frontend Menu Functionality","Check Home button",""
+"  As a User
+  I want to be able to see clickable SideMenu button
+  So that I can access to menu options","4466","Check Get Verified button","","Wed May 07 16:59:58 GMT 2025","passed","Wed May 07 17:00:03 GMT 2025","","Frontend Menu Functionality","Check Get Verified button",""
+"  As a User
+  I want to be able to see clickable SideMenu button
+  So that I can access to menu options","4694","Check Coach Directory button","","Wed May 07 16:59:27 GMT 2025","passed","Wed May 07 16:59:32 GMT 2025","","Frontend Menu Functionality","Check Coach Directory button",""
+"  As a User
+  I want to be able to see clickable SideMenu button
+  So that I can access to menu options","4173","Check Scholarships button","","Wed May 07 16:58:51 GMT 2025","passed","Wed May 07 16:58:56 GMT 2025","","Frontend Menu Functionality","Check Scholarships button",""
+"  As a User
+  I want to be able to see clickable SideMenu button
+  So that I can access to menu options","6372","Check Film To Field button","","Wed May 07 16:59:41 GMT 2025","passed","Wed May 07 16:59:48 GMT 2025","","Frontend Menu Functionality","Check Film To Field button",""
+"  As a User
+  I want to be able to see clickable SideMenu button
+  So that I can access to menu options","5998","Check Calendar button","","Wed May 07 16:59:11 GMT 2025","passed","Wed May 07 16:59:17 GMT 2025","","Frontend Menu Functionality","Check Calendar button",""
+"  As a User
+  I want to be able to see clickable SideMenu button
+  So that I can access to menu options","3048","Check What We Do button","","Wed May 07 16:58:28 GMT 2025","passed","Wed May 07 16:58:31 GMT 2025","","Frontend Menu Functionality","Check What We Do button",""
+"  As a Student
+  I want to be able to login to the G.E.M. Class Recruiting website
+  So that I can access my account","2066","Check Sign Up link button","","Wed May 07 16:58:18 GMT 2025","passed","Wed May 07 16:58:20 GMT 2025","","Login Functionality","Check Sign Up link button",""
+"  As a User
+  I want to be able to see clickable SideMenu button
+  So that I can access to menu options","4719","Check Classroom button","","Wed May 07 16:59:37 GMT 2025","passed","Wed May 07 16:59:41 GMT 2025","","Frontend Menu Functionality","Check Classroom button",""
+"  As a User
+  I want to be able to see clickable SideMenu button
+  So that I can access to menu options","3552","Check Login button","","Wed May 07 16:59:55 GMT 2025","passed","Wed May 07 16:59:58 GMT 2025","","Frontend Menu Functionality","Check Login button",""
+"  As a User
+  I want to be able to see clickable SideMenu button
+  So that I can access to menu options","4921","Check My Profile button","","Wed May 07 16:59:22 GMT 2025","passed","Wed May 07 16:59:27 GMT 2025","","Frontend Menu Functionality","Check My Profile button",""
+"  As a User
+  I want to be able to see clickable SideMenu button
+  So that I can access to menu options","5169","Check all options are displayed and clickable for Menu button","","Wed May 07 16:58:20 GMT 2025","passed","Wed May 07 16:58:25 GMT 2025","","Frontend Menu Functionality","Check all options are displayed and clickable for Menu button",""
+"  As a Student
+  I want to be able to login to the G.E.M. Class Recruiting website
+  So that I can access my account","2371","Unsuccessful login with invalid credentials","","Wed May 07 16:58:07 GMT 2025","passed","Wed May 07 16:58:09 GMT 2025","","Login Functionality","Unsuccessful login with invalid credentials",""
+"  As a Student
+  I want to be able to login to the G.E.M. Class Recruiting website
+  So that I can access my account","1264","Validation empty login or password fields","","Wed May 07 16:58:11 GMT 2025","passed","Wed May 07 16:58:12 GMT 2025","","Login Functionality","Validation empty login or password fields",""
+"  As a Student
+  I want to be able to login to the G.E.M. Class Recruiting website
+  So that I can access my account","7515","Successful login with valid credentials","","Wed May 07 16:57:56 GMT 2025","passed","Wed May 07 16:58:04 GMT 2025","","Login Functionality","Successful login with valid credentials",""
+"  As a User
+  I want to be able to see clickable SideMenu button
+  So that I can access to menu options","5676","Check Contact Us button","","Wed May 07 16:58:43 GMT 2025","passed","Wed May 07 16:58:48 GMT 2025","","Frontend Menu Functionality","Check Contact Us button",""
+"  As a User
+  I want to be able to see clickable SideMenu button
+  So that I can access to menu options","4715","Check Study Guide button","","Wed May 07 16:59:32 GMT 2025","passed","Wed May 07 16:59:37 GMT 2025","","Frontend Menu Functionality","Check Study Guide button",""
+"  As a User
+  I want to be able to see clickable SideMenu button
+  So that I can access to menu options","5352","Check Testimonials button","","Wed May 07 16:58:34 GMT 2025","passed","Wed May 07 16:58:40 GMT 2025","","Frontend Menu Functionality","Check Testimonials button",""
+"  As a Student
+  I want to be able to login to the G.E.M. Class Recruiting website
+  So that I can access my account","3004","Unsuccessful login with invalid credentials","","Wed May 07 16:58:04 GMT 2025","passed","Wed May 07 16:58:07 GMT 2025","","Login Functionality","Unsuccessful login with invalid credentials",""
+"  As a User
+  I want to be able to see clickable SideMenu button
+  So that I can access to menu options","4942","Check Gameplan button","","Wed May 07 16:59:00 GMT 2025","passed","Wed May 07 16:59:05 GMT 2025","","Frontend Menu Functionality","Check Gameplan button",""
+"  As a User
+  I want to be able to see clickable SideMenu button
+  So that I can access to menu options","4353","Check Grades button","","Wed May 07 16:58:56 GMT 2025","passed","Wed May 07 16:59:00 GMT 2025","","Frontend Menu Functionality","Check Grades button",""
+"  As a User
+  I want to be able to see clickable SideMenu button
+  So that I can access to menu options","5646","Check Player Directory button","","Wed May 07 16:59:17 GMT 2025","passed","Wed May 07 16:59:22 GMT 2025","","Frontend Menu Functionality","Check Player Directory button",""
+"  As a User
+  I want to be able to see clickable SideMenu button
+  So that I can access to menu options","5832","Check Guidelines button","","Wed May 07 16:59:05 GMT 2025","passed","Wed May 07 16:59:11 GMT 2025","","Frontend Menu Functionality","Check Guidelines button",""
+"  As a User
+  I want to be able to see clickable SideMenu button
+  So that I can access to menu options","6956","Check Settings button","","Wed May 07 16:59:48 GMT 2025","passed","Wed May 07 16:59:55 GMT 2025","","Frontend Menu Functionality","Check Settings button",""
+"  As a Student
+  I want to be able to login to the G.E.M. Class Recruiting website
+  So that I can access my account","5568","Forgot password link","","Wed May 07 16:58:12 GMT 2025","passed","Wed May 07 16:58:18 GMT 2025","","Login Functionality","Forgot password link",""
