@@ -105,7 +105,7 @@ jobs:
           if [[ "${{ github.event.inputs.feature }}" != "all" && "${{ github.event.inputs.feature }}" != "" ]]; then
             FEATURE_TAG="@feature=${{ github.event.inputs.feature }}"
             if [[ -n "$BASE_TAG" ]]; then
-              BASE_TAG="$BASE_TAG and $FEATURE_TAG"
+              BASE_TAG="($BASE_TAG) and $FEATURE_TAG"
             else
               BASE_TAG="$FEATURE_TAG"
             fi
@@ -115,7 +115,7 @@ jobs:
           if [[ "${{ github.event.inputs.story }}" != "all" && "${{ github.event.inputs.story }}" != "" ]]; then
             STORY_TAG="@story=${{ github.event.inputs.story }}"
             if [[ -n "$BASE_TAG" ]]; then
-              BASE_TAG="$BASE_TAG and $STORY_TAG"
+              BASE_TAG="($BASE_TAG) and $STORY_TAG"
             else
               BASE_TAG="$STORY_TAG"
             fi
@@ -124,14 +124,26 @@ jobs:
           # Добавление пользовательских тегов
           if [[ -n "${{ github.event.inputs.custom_tags }}" ]]; then
             if [[ -n "$BASE_TAG" ]]; then
-              BASE_TAG="$BASE_TAG and (${{ github.event.inputs.custom_tags }})"
+              BASE_TAG="($BASE_TAG) and (${{ github.event.inputs.custom_tags }})"
             else
               BASE_TAG="${{ github.event.inputs.custom_tags }}"
             fi
           fi
           
+          # Вывод для отладки
+          echo "Теги для фильтрации тестов: $BASE_TAG"
+          
+          # Явно указываем только feature
+          if [[ "${{ github.event.inputs.feature }}" == "LoginFeature" ]]; then
+            BASE_TAG="@feature=LoginFeature"
+            echo "Установлены теги только для LoginFeature"
+          elif [[ "${{ github.event.inputs.feature }}" == "MenuFeature" ]]; then
+            BASE_TAG="@feature=MenuFeature"
+            echo "Установлены теги только для MenuFeature"
+          fi
+          
           echo "test_tags=$BASE_TAG" >> $GITHUB_OUTPUT
-          echo "Выбранные теги для тестов: $BASE_TAG"
+          echo "Финальные теги для тестов: $BASE_TAG"
           
       - id: set-mode
         run: |
@@ -179,7 +191,12 @@ jobs:
       - name: Run Tests
         run: |
           if [[ -n "${{ needs.determine-test-matrix.outputs.test_tags }}" ]]; then
-            mvn clean test -Dselenide.headless=true -Dcucumber.filter.tags="${{ needs.determine-test-matrix.outputs.test_tags }}"
+            echo "Запуск тестов с тегами: ${{ needs.determine-test-matrix.outputs.test_tags }}"
+            # Экранируем кавычки для правильной передачи в Maven
+            TAGS="${{ needs.determine-test-matrix.outputs.test_tags }}"
+            # Заменяем кавычки на экранированные кавычки для Maven
+            TAGS="${TAGS//\"/\\\"}"
+            mvn clean test -Dselenide.headless=true -Dcucumber.filter.tags="$TAGS"
           else
             mvn clean test -Dselenide.headless=true
           fi
@@ -270,7 +287,13 @@ jobs:
           echo "Итоговые теги для запуска: $FINAL_TAGS"
 
       - name: Run Cucumber tests for ${{ matrix.feature }}
-        run: mvn clean test -Dselenide.headless=true -Dcucumber.filter.tags="${{ env.final_tags }}"
+        run: |
+          echo "Запуск тестов с тегами: ${{ env.final_tags }}"
+          # Экранируем кавычки для правильной передачи в Maven
+          TAGS="${{ env.final_tags }}"
+          # Заменяем кавычки на экранированные кавычки для Maven
+          TAGS="${TAGS//\"/\\\"}"
+          mvn clean test -Dselenide.headless=true -Dcucumber.filter.tags="$TAGS"
 
       - name: Generate Allure Report for ${{ matrix.feature }}
         uses: simple-elf/allure-report-action@master
