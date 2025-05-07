@@ -17,6 +17,7 @@ import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selenide.webdriver;
 import static com.codeborne.selenide.Selenide.open;
 import static com.codeborne.selenide.CollectionCondition.sizeGreaterThan;
+import static pages.FilmToFieldPage.getStartedFilmToFieldButton;
 
 /**
  * Step definitions for Menu button
@@ -460,5 +461,29 @@ public class MenuSteps {
     @Step("Clicking on Classroom button")
     public void iClickOnClassroomButton() {
         hamburgerMenu.clickClassRoom();
+    }
+
+    @And("I click on Film To field button")
+    @Step("Clicking on Film To Field button")
+    public void iClickOnFilmToFieldButton() {
+        hamburgerMenu.clickFilmToField();
+    }
+
+    @Then("I should see Film To Field page")
+    @Step("Verifying Film To Field page")
+    public void iShouldSeeFilmToFieldPage() throws InterruptedException {
+        String currentUrl = webdriver().driver().url();
+        Assert.assertEquals(currentUrl, FilmToFieldPage.FILM_TO_FIELD_URL,
+                "Not redirected to Film To Field page");
+        FilmToFieldPage.filmToFieldTitle.shouldBe(visible);
+        FilmToFieldPage.filmToFieldSectionText.shouldBe(visible);
+        FilmToFieldPage.filmToFieldClickBelowTitle.shouldBe(visible);
+        getStartedFilmToFieldButton.scrollTo();
+        Thread.sleep(1000);
+        getStartedFilmToFieldButton.shouldBe(visible).shouldBe(clickable);
+        getStartedFilmToFieldButton.click();
+        String currentUrlAfterClick = webdriver().driver().url();
+        Assert.assertEquals(currentUrlAfterClick, FilmToFieldPage.FILM_TO_FIELD_COM_URL,
+                "Not redirected to filmtofield.com");
     }
 }
