@@ -2,10 +2,7 @@ name: Java CI with Maven and Allure
 
 on:
   workflow_dispatch:  # allow run workflow manually from GitHub interface
-  push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
+
 
 jobs:
   build:
