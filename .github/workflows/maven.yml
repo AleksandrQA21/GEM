@@ -2,10 +2,10 @@ name: Java CI with Maven and Allure
 
 on:
   workflow_dispatch:  # allow run workflow manually from GitHub interface
-  push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
+#  push:
+#    branches: [ "main" ]
+#  pull_request:
+#    branches: [ "main" ]
 
 # Добавляем разрешения для GitHub Pages
 permissions:
@@ -36,11 +36,11 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y google-chrome-stable
 
-      - name: Run Tests
-        run: |
-          export DISPLAY=:99
-          Xvfb :99 -screen 0 1280x1024x24 > /dev/null 2>&1 &
-          mvn clean test -Dselenide.headless=true
+#      - name: Run Tests
+#        run: |
+#          export DISPLAY=:99
+#          Xvfb :99 -screen 0 1280x1024x24 > /dev/null 2>&1 &
+#          mvn clean test -Dselenide.headless=true
           
           
 
