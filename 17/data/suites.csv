@@ -1,0 +1,22 @@
+"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
+"  As a Student
+  I want to be able to login to the G.E.M. Class Recruiting website
+  So that I can access my account","1213","Validation empty login or password fields","","Wed May 07 16:07:08 GMT 2025","passed","Wed May 07 16:07:09 GMT 2025","","Login Functionality","Validation empty login or password fields",""
+"  As a Student
+  I want to be able to login to the G.E.M. Class Recruiting website
+  So that I can access my account","2948","Unsuccessful login with invalid credentials","","Wed May 07 16:07:03 GMT 2025","passed","Wed May 07 16:07:06 GMT 2025","","Login Functionality","Unsuccessful login with invalid credentials",""
+"  As a Student
+  I want to be able to login to the G.E.M. Class Recruiting website
+  So that I can access my account","6104","Forgot password link","","Wed May 07 16:07:09 GMT 2025","passed","Wed May 07 16:07:15 GMT 2025","","Login Functionality","Forgot password link",""
+"  As a Student
+  I want to be able to login to the G.E.M. Class Recruiting website
+  So that I can access my account","2845","Unsuccessful login with invalid credentials","","Wed May 07 16:07:01 GMT 2025","passed","Wed May 07 16:07:03 GMT 2025","","Login Functionality","Unsuccessful login with invalid credentials",""
+"  As a Student
+  I want to be able to login to the G.E.M. Class Recruiting website
+  So that I can access my account","1344","Validation empty login or password fields","","Wed May 07 16:07:06 GMT 2025","passed","Wed May 07 16:07:08 GMT 2025","","Login Functionality","Validation empty login or password fields",""
+"  As a Student
+  I want to be able to login to the G.E.M. Class Recruiting website
+  So that I can access my account","6305","Successful login with valid credentials","","Wed May 07 16:06:54 GMT 2025","passed","Wed May 07 16:07:01 GMT 2025","","Login Functionality","Successful login with valid credentials",""
+"  As a Student
+  I want to be able to login to the G.E.M. Class Recruiting website
+  So that I can access my account","2305","Check Sign Up link button","","Wed May 07 16:07:15 GMT 2025","passed","Wed May 07 16:07:17 GMT 2025","","Login Functionality","Check Sign Up link button",""
