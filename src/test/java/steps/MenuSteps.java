@@ -455,4 +455,10 @@ public class MenuSteps {
         StudyGuidePage.itemCardsGrid.shouldBe(visible);
 
     }
+
+    @And("I click on Classroom button")
+    @Step("Clicking on Classroom button")
+    public void iClickOnClassroomButton() {
+        hamburgerMenu.clickClassRoom();
+    }
 }
