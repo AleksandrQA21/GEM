@@ -25,6 +25,8 @@ public abstract class BasePage {
      * Constructor for Base Page class
      */
     public BasePage() {
+        Configuration.headless = true;
+
     }
 
     /**
